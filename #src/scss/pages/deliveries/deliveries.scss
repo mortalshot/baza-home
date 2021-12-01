@@ -1,0 +1,986 @@
+.deliveries {
+    &__tabs {
+        .nav-tabs {
+            border-color: transparent;
+            padding-bottom: 15px;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scrollbar-width: thin;
+
+            &::-webkit-scrollbar {
+                height: 5px;
+            }
+            &::-webkit-scrollbar-track {
+                background-color: #909090;
+                border-radius: 3px;
+            }
+            &::-webkit-scrollbar-thumb {
+                border-radius: 3px;
+                background-color: #363636;
+            }
+
+            .nav-item {
+                margin: 0 40px 0 0;
+                @include adaptiv-value("margin-right", 40, 10, 1);
+            }
+
+            .nav-link {
+                font-weight: 600;
+                color: $Black;
+                border-color: transparent;
+                position: relative;
+                padding: 0;
+                white-space: nowrap;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 4px;
+                    bottom: 0;
+                    left: 0;
+                    background-color: $GreenM;
+                    transform: translate(0, 9px) scale(0);
+                    transition: 0.3s ease all 0s;
+                }
+
+                &.active {
+                    background-color: transparent;
+                    color: $Black;
+
+                    &::after {
+                        transform: translate(0, 9px) scale(1);
+                    }
+                }
+            }
+        }
+    }
+
+    &__table {
+        .table__row {
+            padding: 16px 6px;
+        }
+
+        .table__column {
+            padding: 19px 10px;
+        }
+    }
+
+    &__column--request {
+        padding-left: 20px !important;
+        width: 100%;
+
+        @media screen and (max-width: 900px) {
+            flex: 0 0 100%;
+            padding-left: 10px !important;
+        }
+        @media screen and (max-width: 575px) {
+            order: 1;
+        }
+    }
+
+    &__request {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
+        color: $Black;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .text-link {
+            font-weight: 600;
+            
+            &::before {
+                border-bottom-style: solid;
+                border-bottom-width: 1px;
+            }
+        }
+
+        .deliveries__firm {
+            color: $Black;
+            white-space: nowrap;
+
+            &::before {
+                border-bottom-color: $Black;
+            }
+        }
+
+        .applications__city {
+            font-size: 12px;
+            line-height: 15px;
+            color: $DGray;
+            @include adaptiv-value("padding-left", 28, 10, 1);
+
+            @media screen and (min-width: 901px) and (max-width: 991px) {
+                flex: 0 0 100%;
+                padding: 15px 0px 5px 0px;
+            }
+            @media screen and (max-width: 575px) {
+                flex: 0 0 100%;
+                padding: 15px 0px 5px 0px;
+            }
+        }
+    }
+
+    &__person {
+        text-decoration: underline;
+        color: $DGray;
+    }
+
+    &__column--weight {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        text-align: right;
+        white-space: nowrap;
+
+        @media screen and (max-width: 900px) {
+            flex: 0 0 30%;
+            display: flex;
+            justify-content: flex-start;
+        }
+        @media screen and (max-width: 575px) {
+            flex: 0 0 50%;
+            order: 2;
+        }
+    }
+
+    &__column--price {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
+        color: $Black;
+        text-align: right;
+        white-space: nowrap;
+
+        @media screen and (max-width: 900px) {
+            flex: 0 0 30%;
+            display: flex;
+            justify-content: flex-end;
+        }
+        @media screen and (max-width: 575px) {
+            flex: 0 0 50%;
+            order: 3;
+        }
+    }
+
+    &__column--status {
+        text-align: right;
+
+        @media screen and (max-width: 900px) {
+            flex: 1 1 auto;
+            display: flex;
+            justify-content: flex-end;
+        }
+        @media screen and (max-width: 575px) {
+            order: 0;
+            justify-content: flex-start;
+            flex: 0 0 100%;
+        }
+    }
+
+    &__settlements {
+        thead {
+            @media screen and (max-width: 900px) {
+                display: none;
+            }
+
+            th {
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 15px;
+                color: $Gray;
+
+                &.table__column {
+                    padding: 0 10px 14px;
+
+                    @media screen and (min-width: 901px) {
+                        border-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        tbody {
+            background-color: $White;
+            font-size: 14px;
+            line-height: 18px;
+        }
+
+        .table__column {
+            @media screen and (max-width: 900px) {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+
+        .deliveries__row {
+            @media screen and (max-width: 900px) {
+                display: flex;
+                flex-wrap: wrap;
+                border-bottom: 1px solid $LGray3;
+
+                &:last-child {
+                    border-bottom: 0;
+                }
+            }
+
+            &:last-child {
+                @media screen and (min-width: 901px) {
+                    .table__column {
+                        border-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        .deliveries {
+            &__table-label {
+                flex: 0 0 100%;
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 15px;
+
+                @media screen and (min-width: 901px) {
+                    display: none;
+                }
+            }
+
+            &__column--plus {
+                @media screen and (max-width: 900px) {
+                    order: 8;
+                    flex: 0 0 100%;
+                }
+            }
+
+            &__column--name {
+                font-weight: 600;
+
+                @media screen and (max-width: 900px) {
+                    order: 4;
+                    flex: 0 0 100%;
+                    margin: 8px 0 16px;
+                }
+
+                .text-link {
+                    color: $Black;
+
+                    &::before {
+                        border-bottom-color: $Black;
+                        border-bottom-width: 1px;
+                        border-bottom-style: solid;
+                    }
+                }
+            }
+
+            &__column--delivered {
+                color: $DGray;
+
+                @media screen and (max-width: 900px) {
+                    order: 5;
+                    flex: 0 0 50%;
+                }
+            }
+
+            &__column--paid {
+                color: $DGray;
+
+                @media screen and (max-width: 900px) {
+                    order: 6;
+                    flex: 0 0 50%;
+                }
+            }
+
+            &__column--purse {
+                font-weight: 600;
+
+                @media screen and (max-width: 900px) {
+                    order: 7;
+                    flex: 0 0 50%;
+                }
+            }
+
+            &__column--date {
+                color: $Red;
+
+                @media screen and (max-width: 900px) {
+                    order: 1;
+                    flex: 0 0 65%;
+                }
+            }
+
+            &__column--timer {
+                color: $Red;
+
+                @media screen and (max-width: 900px) {
+                    order: 2;
+                    flex: 0 0 40%;
+                }
+            }
+
+            &__column--status {
+                @media screen and (max-width: 900px) {
+                    order: 3;
+                    flex: 0 0 35%;
+                    justify-content: flex-end;
+                }
+            }
+
+            &__column--red {
+                color: $GreenM;
+            }
+
+            &__documents-link {
+                color: $DGray;
+                padding: 5px;
+                border: 1px dashed $LGray;
+                border-radius: 3px;
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                transition: 0.3s ease color 0s;
+
+                @media screen and (min-width: 992px) {
+                    &:hover {
+                        color: rgba($color: $DGray, $alpha: 0.6);
+                    }
+                }
+                @media screen and (max-width: 900px) {
+                    width: 100%;
+                    justify-content: center;
+                    border: 0;
+                    padding: 0;
+                    margin-top: 16px;
+                }
+
+                span {
+                    font-weight: 600;
+                    font-size: 10px;
+                    line-height: 1;
+                    color: $White;
+                    padding: 2px;
+                    background-color: $GreenM;
+                    border-radius: 1px;
+
+                    @media screen and (min-width: 901px) {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        transform: translate(50%, -50%);
+                    }
+                    @media screen and (max-width: 900px) {
+                        font-size: 12px;
+                        height: 38px;
+                        width: 38px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-left: 8px;
+                    }
+                }
+
+                i {
+                    font-size: 14px;
+                    display: flex;
+
+                    @media screen and (max-width: 900px) {
+                        height: 38px;
+                        width: 100%;
+                        align-items: center;
+                        justify-content: center;
+                        border: 1px dashed $LGray;
+                        border-radius: 3px;
+                        font-size: 26px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.deliveries-documents {
+    .popup {
+        &__content {
+            max-width: 376px;
+            min-height: 490px;
+            padding: 27px 27px 25px;
+            background-color: $White;
+            color: $Black;
+            display: flex;
+        }
+
+        &__close {
+            top: 15px;
+            right: 15px;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &__heading {
+        display: flex;
+        padding-bottom: 28px;
+        border-bottom: 1px solid $LGray3;
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 23px;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(14px + 4 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(23 / 18);
+        }
+
+        .base__back {
+            display: inline-flex;
+        }
+
+        i {
+            font-size: 24px;
+        }
+    }
+
+    &__content {
+        flex: 1 1 auto;
+    }
+
+    &__item {
+        @include adaptiv-value("margin-bottom", 28, 20, 1);
+    }
+
+    &__item--accept {
+        .deliveries-documents__label {
+            color: $Black;
+
+            &::before {
+                background: url(../img/icons/check-delivery-timeline.svg) no-repeat center/cover;
+                border: 0;
+            }
+        }
+    }
+
+    &__label {
+        font-weight: 600;
+        color: $Gray;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 14px;
+            height: 14px;
+            border: 1px solid $LGray;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+    }
+
+    &__link {
+        color: $GreenM;
+        display: flex;
+        align-items: center;
+        margin-top: 8px;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 16px;
+            height: 17px;
+            background: url(../img/icons/pdf.svg) no-repeat center/cover;
+            filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+            margin-right: 8px;
+        }
+    }
+
+    .add-application__add {
+        @include adaptiv-value("margin-top", 38, 20, 1);
+
+        &-btn {
+            font-size: 24px;
+            color: $DGray;
+        }
+    }
+
+    .accordion {
+        &__item {
+            border-bottom: 1px solid $LGray3;
+
+            padding: 14px 0;
+        }
+
+        &__title {
+            font-weight: 600;
+
+            &::before,
+            &::after {
+                background-color: $Gray;
+            }
+        }
+
+        &__text {
+            padding-top: 14px;
+        }
+    }
+
+    &__download {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        font-size: 14px;
+        line-height: 18px;
+        color: $Gray;
+        transition: 0.3s ease all 0s;
+
+        i {
+            font-size: 24px;
+            display: inline-flex;
+            align-items: center;
+            margin-right: 8px;
+        }
+    }
+
+    &__document {
+        display: flex;
+        align-items: center;
+        position: relative;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1;
+        color: $Black;
+        margin-bottom: 8px;
+        transition: 0.3s ease all 0s;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            width: 9px;
+            height: 10px;
+            background: url(../img/icons/reset.svg) no-repeat center/cover;
+            margin-left: 8px;
+        }
+    }
+
+    .form {
+        &-row {
+            margin: 10px -5px 0;
+        }
+
+        &-group {
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-bottom: 0;
+
+            span {
+                display: flex;
+                position: absolute;
+                @include adaptiv-value("right", 22, 17, 1);
+                top: 50%;
+                transform: translate(0, -50%);
+                pointer-events: none;
+
+                i {
+                    font-size: 14px;
+                    color: $Gray;
+                    display: inline-flex;
+                    align-items: center;
+                }
+            }
+        }
+
+        &-control {
+            border-radius: 3px;
+            background-color: $LGray3;
+            padding: 10px 12px;
+            font-size: 16px;
+            line-height: 21px;
+            border-color: transparent;
+            height: 41px;
+
+            @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+                font-size: calc(12px + 4 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+                line-height: calc(21 / 16);
+            }
+
+            &::-webkit-inner-spin-button,
+            &::-webkit-calendar-picker-indicator {
+                -webkit-appearance: none;
+                opacity: 0;
+            }
+
+            &:focus {
+                box-shadow: none;
+                border-color: transparent;
+            }
+        }
+
+        &-label {
+            margin-left: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 21px;
+
+            @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+                font-size: calc(12px + 4 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+                line-height: calc(21 / 16);
+            }
+        }
+    }
+}
+
+.bank-book {
+    display: flex;
+    @include adaptiv-value("margin-top", 24, 19, 1);
+
+    &__left {
+        @include adaptiv-value("padding-right", 32, 0, 1);
+        flex: 1 1 auto;
+
+        @media screen and (max-width: 991px) {
+            padding-right: 0;
+        }
+
+        & > .bank-book__balance-wrapper {
+            @include adaptiv-value("margin-bottom", 24, 19, 1);
+        }
+    }
+
+    &__balance-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        @include adaptiv-value("padding-top", 27, 24, 1);
+        @include adaptiv-value("padding-bottom", 27, 16, 1);
+        @include adaptiv-value("padding-left", 40, 16, 1);
+        @include adaptiv-value("padding-right", 40, 16, 1);
+        background-color: $White;
+        border-radius: 3px;
+
+        @media screen and (max-width: 575px) {
+            flex-direction: column;
+            align-items: baseline;
+        }
+    }
+
+    &__balance {
+        display: flex;
+        align-items: center;
+        padding-right: 15px;
+
+        @media screen and (max-width: 575px) {
+            padding: 0px 0px 24px 0px;
+        }
+    }
+
+    &__balance-icon {
+        display: flex;
+        margin-right: 20px;
+
+        i {
+            font-size: 32px;
+        }
+    }
+
+    &__score {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 31px;
+        color: $Black;
+        white-space: nowrap;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(18px + 6 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(31 / 24);
+        }
+    }
+
+    &__label {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 21px;
+        color: $Gray;
+        white-space: nowrap;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(14px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(21 / 16);
+        }
+    }
+
+    &__actions {
+        display: flex;
+    }
+
+    &__btn {
+        padding: 6.5px 18px;
+        min-width: 127px;
+        margin-right: 18px;
+        font-size: 16px;
+        line-height: 21px;
+        color: $White;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(14px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(21 / 16);
+        }
+        @media screen and (max-width: 450px) {
+            min-width: initial;
+            margin-right: 10px;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        i {
+            font-size: 18px;
+            margin-right: 8px;
+            display: inline-flex;
+        }
+    }
+
+    &__table {
+        background-color: $White;
+        border-radius: 3px;
+
+        .table__row {
+            @media screen and (max-width: 767px) {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 13px 0;
+                border-bottom: 1px solid $LGray3;
+
+                &:last-child {
+                    border-bottom: 0;
+                }
+            }
+
+            &:last-child {
+                @media screen and (min-width: 901px) {
+                    .table__column {
+                        border-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        .table__column {
+            padding: 21px 10px;
+
+            @media screen and (max-width: 900px) {
+                display: table-cell;
+                padding: 21px 10px;
+            }
+            @media screen and (max-width: 767px) {
+                display: flex;
+                align-content: center;
+                padding: 3px 16px;
+            }
+
+            &:first-child {
+                @include adaptiv-value("padding-left", 32, 16, 1);
+
+                @media screen and (max-width: 767px) {
+                    padding-left: 16px;
+                }
+            }
+            &:last-child {
+                @include adaptiv-value("padding-right", 32, 16, 1);
+
+                @media screen and (max-width: 767px) {
+                    padding-right: 16px;
+                }
+            }
+        }
+    }
+
+    &__sum {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
+        color: $Red;
+        white-space: nowrap;
+        width: 15%;
+
+        @media screen and (max-width: 767px) {
+            flex: 0 0 70%;
+            order: 1;
+            width: initial;
+        }
+    }
+
+    &__sum--green {
+        color: $GreenM;
+    }
+
+    &__cashback {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        color: $Gray;
+
+        span {
+            display: flex;
+            align-content: center;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 14px;
+                height: 14px;
+                background: url(../img/icons/coins.svg) no-repeat center/cover;
+                margin-left: 3px;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            flex: 0 0 30%;
+            justify-content: flex-end;
+            order: 2;
+        }
+    }
+
+    &__descr {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        color: $DGray;
+        text-align: right;
+        width: 50%;
+
+        .text-link {
+            color: $DGray;
+
+            &::before {
+                border-bottom: 1px solid $DGray;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            order: 4;
+            width: initial;
+        }
+    }
+
+    &__card {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        color: $DGray;
+
+        span {
+            display: flex;
+            align-items: center;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 3px;
+                height: 3px;
+                border-radius: 50%;
+                background-color: $DGray;
+                margin-right: 2px;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            order: 5;
+        }
+    }
+
+    &__date {
+        text-align: right;
+        font-size: 14px;
+        line-height: 18px;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(12px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(18 / 14);
+        }
+        @media screen and (max-width: 767px) {
+            order: 3;
+            flex: 0 0 100%;
+        }
+    }
+
+    &__right {
+        flex: 0 0 29%;
+
+        @media screen and (max-width: 991px) {
+            display: none;
+        }
+    }
+
+    &__bonus {
+        @media screen and (max-width: 991px) {
+            @include adaptiv-value("margin-bottom", 24, 19, 1);
+        }
+
+        @media screen and (max-width: 575px) {
+            .bank-book__balance-wrapper {
+                border-radius: 3px 3px 0 0;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .bank-book__balance {
+                padding: 0px 10px 0px 0px;
+            }
+        }
+    }
+
+    &__exchange {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 21px;
+        color: $GreenM;
+        transition: 0.3s ease all 0s;
+        position: relative;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(14px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(21 / 16);
+        }
+
+        i {
+            font-size: 18px;
+            display: inline-flex;
+
+            @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+                font-size: calc(14px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            }
+        }
+    }
+
+    &__bonus-bottom {
+        @include adaptiv-value("padding-top", 23, 16, 1);
+        @include adaptiv-value("padding-bottom", 23, 16, 1);
+        @include adaptiv-value("padding-left", 40, 16, 1);
+        @include adaptiv-value("padding-right", 40, 16, 1);
+        background-color: $LBlue;
+        border-radius: 0 0 3px 3px;
+    }
+
+    &__bonus-note {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        color: $DGray;
+    }
+}

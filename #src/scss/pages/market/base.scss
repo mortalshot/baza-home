@@ -1,0 +1,42 @@
+.base {
+    @include adaptiv-value("padding-top", 33, 26, 1);
+    @include adaptiv-value("padding-bottom", 33, 15, 1);
+
+    &__container {
+        max-width: 100%;
+
+        @media screen and (min-width: $layoutDesktop + "px") {
+            max-width: 100%;
+        }
+
+        @media screen and (min-width: 992px) {
+            @include adaptiv-value("padding-left", 37, 16, 1);
+            @include adaptiv-value("padding-right", 37, 16, 1);
+        }
+    }
+
+    &__heading {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        @include adaptiv-value("margin-bottom", 33, 26, 1);
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+    }
+
+    &__back {
+        color: $Black;
+        font-size: 22px;
+        margin-right: 10px;
+        transition: 0.3s ease color 0s;
+
+        @media screen and (min-width: 992px) {
+            &:hover {
+                color: rgba($color: $Black, $alpha: 0.5);
+            }
+        }
+    }
+}

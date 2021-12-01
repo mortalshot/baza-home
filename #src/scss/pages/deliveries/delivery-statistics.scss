@@ -1,0 +1,99 @@
+.delivery-statistics {
+    border-radius: 3px;
+    background-color: $GreenM;
+    color: $White;
+    padding: 27px 32px;
+    margin: 18px 0 40px;
+    position: relative;
+
+    @media screen and (max-width: 991px) {
+        padding: 14px 20px;
+    }
+    @media screen and (max-width: 575px) {
+        justify-content: baseline;
+        margin: 24px 0;
+        padding: 22px 30px;
+    }
+
+    &__body {
+        display: flex;
+        align-items: center;
+
+        @media screen and (max-width: 767px) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        @media screen and (max-width: 575px) {
+            justify-content: baseline;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        @include adaptiv-value("padding-right", 104, -100, 1);
+
+        &::last-child {
+            padding-right: 0;
+        }
+
+        @media screen and (max-width: 991px) {
+            padding-right: 10px;
+        }
+        @media screen and (max-width: 575px) {
+            flex: 0 0 100%;
+            padding: 12px 0;
+        }
+    }
+
+    &__icon {
+        margin-right: 12px;
+        font-size: 38px;
+
+        @media screen and (max-width: 575px) {
+            display: none;
+        }
+    }
+
+    &__sum {
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 31px;
+        white-space: nowrap;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(18px + 8 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(31 / 24);
+        }
+    }
+
+    &__label {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 21px;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(14px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(18 / 14);
+        }
+    }
+
+    &__close {
+        position: absolute;
+        right: 11px;
+        top: 13px;
+        width: 14px;
+        height: 3px;
+        border-radius: 1px;
+        background-color: $White;
+        border: 2px solid transparent;
+        transition: 0.3s ease border-color, background-color 0s;
+
+        &.active {
+            height: 10px;
+            background-color: transparent;
+            border-color: $White;
+        }
+    }
+}

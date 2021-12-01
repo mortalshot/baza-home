@@ -1,0 +1,280 @@
+.application-card {
+    background-color: $White;
+    padding: 16px 0 0;
+    border-radius: 3px;
+
+    &__heading {
+        border-bottom: 1px solid $LGray3;
+        padding: 0 20px 23px;
+
+        @media screen and (max-width: 450px) {
+            padding: 0 16px 16px;
+        }
+
+        .cart {
+            &__heading-row {
+                @include adaptiv-value("margin-bottom", 31, 15, 1);
+
+                @media screen and (max-width: 450px) {
+                    flex-direction: column;
+                    align-items: baseline;
+                }
+            }
+
+            &__left {
+                padding-left: 0;
+            }
+
+            &__account {
+                @media screen and (max-width: 575px) {
+                    margin-bottom: 0;
+                }
+            }
+
+            &__right {
+                font-size: 12px;
+                line-height: 15px;
+                color: $DGray;
+
+                @media screen and (min-width: $layoutDesktop + "px") {
+                    font-size: calc(10px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+                    line-height: calc(15 / 12);
+                }
+
+                i {
+                    display: inline-flex;
+                }
+            }
+        }
+
+        .order-terms {
+            &__condition {
+                margin: 0 0 14px;
+                padding: 0 9px;
+                border: 0;
+                font-size: 14px;
+                line-height: 18px;
+
+                @media screen and (max-width: 450px) {
+                    padding: 0;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            &__condition-title {
+                font-weight: 500;
+            }
+
+            &__condition-text {
+                font-size: 14px;
+                line-height: 15px;
+                color: $DGray;
+            }
+        }
+    }
+
+    &__table {
+        color: $DGray;
+        margin: 0;
+
+        thead {
+            th {
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 15px;
+                border: 0;
+            }
+        }
+
+        .table__row {
+            @media screen and (max-width: 991px) {
+                display: flex;
+                flex-wrap: wrap;
+                border-bottom: 1px solid $LGray3;
+                padding: 6px;
+            }
+        }
+
+        .table__column {
+            padding: 11px 10px;
+            vertical-align: middle;
+
+            @media screen and (min-width: 992px) {
+                border-bottom: 1px solid $LGray3;
+
+                &:first-child {
+                    padding-left: 20px;
+                }
+                &:last-child {
+                    padding-right: 20px;
+                }
+            }
+            @media screen and (max-width: 991px) {
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                border-bottom: 0 !important;
+            }
+        }
+    }
+
+    &__column--product {
+        max-width: 51%;
+
+        @media screen and (max-width: 991px) {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        .product-item {
+            &__content {
+                flex-wrap: wrap;
+                
+                @media screen and (max-width: 575px) {
+                    flex-direction: column;
+                    align-items: baseline;
+                }
+            }
+
+            &__product {
+                flex: initial;
+                margin-right: 12px;
+
+                @media screen and (max-width: 575px) {
+                    margin: 0px 0px 20px 0px;
+                }
+                @media screen and (max-width: 450px) {
+                    align-items: flex-start;
+                }
+            }
+
+            &__product-name {
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 21px;
+            }
+        }
+    }
+
+    &__column--size {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        width: 10%;
+
+        @media screen and (min-width: $layoutDesktop + "px") {
+            font-size: calc(10px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(15 / 12);
+        }
+        @media screen and (max-width: 1200px) {
+            width: 12%;
+        }
+        @media screen and (max-width: 991px) {
+            flex: 0 0 25%;
+        }
+        @media screen and (max-width: 500px) {
+            flex: 0 0 50%;
+        }
+    }
+
+    &__column--quantum {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        width: 10%;
+
+        @media screen and (min-width: $layoutDesktop + "px") {
+            font-size: calc(10px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(15 / 12);
+        }
+        @media screen and (max-width: 991px) {
+            flex: 0 0 25%;
+        }
+        @media screen and (max-width: 500px) {
+            flex: 0 0 50%;
+        }
+    }
+
+    &__column--weight {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        text-align: right;
+        white-space: nowrap;
+        width: 17%;
+
+        @media screen and (max-width: 1200px) {
+            width: 10%;
+        }
+        @media screen and (max-width: 991px) {
+            flex: 0 0 25%;
+        }
+        @media screen and (max-width: 500px) {
+            flex: 0 0 50%;
+        }
+    }
+
+    &__column--price {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        text-align: right;
+        white-space: nowrap;
+
+        @media screen and (max-width: 991px) {
+            flex: 0 0 25%;
+            justify-content: flex-end;
+        }
+        @media screen and (max-width: 500px) {
+            flex: 0 0 50%;
+            justify-content: flex-start;
+        }
+
+        .form {
+            &-row {
+                margin: 0;
+            }
+
+            &-label {
+                margin: 0px 0px 0px 14px;
+                @include adaptiv-value("margin-left", 14, 8, 0);
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 14px;
+                color: $Black;
+            }
+
+            &-control {
+                height: 30px;
+                font-size: 14px;
+                line-height: 18px;
+                width: 72px;
+            }
+        }
+
+        .delivery__edit-save {
+            @include adaptiv-value("margin-left", 14, 8, 0);
+        }
+    }
+
+    &__footer {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 23px;
+        @include adaptiv-value("padding-top", 33, 20, 1);
+        @include adaptiv-value("padding-bottom", 33, 20, 1);
+        @include adaptiv-value("padding-left", 28, 15, 1);
+        @include adaptiv-value("padding-right", 28, 15, 1);
+        background-color: $GreenM;
+        color: $White;
+        border-radius: 0 0 3px 3px;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(16px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(23 / 18);
+        }
+    }
+}

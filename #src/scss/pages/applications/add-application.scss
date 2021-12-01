@@ -1,0 +1,358 @@
+.add-application {
+    &__card {
+        background-color: $White;
+        border-radius: 3px;
+    }
+
+    &__heading {
+        padding: 17px 20px;
+        @include adaptiv-value("padding-top", 17, 12, 1);
+        @include adaptiv-value("padding-bottom", 17, 12, 1);
+        border-bottom: 1px solid $LGray3;
+    }
+
+    &__title {
+        font-weight: 400;
+    }
+
+    &__body {
+        .application-card__column--product {
+            width: 40%;
+
+            @media screen and (max-width: 991px) {
+                order: 1;
+                flex: 0 0 70%;
+                width: 100%;
+                max-width: 100%;
+                padding-left: 10px !important;
+            }
+            @media screen and (max-width: 450px) {
+                flex: 0 0 74%;
+            }
+
+            .product-item__content {
+                @media screen and (max-width: 991px) {
+                    flex-direction: row;
+                    align-items: center;
+                }
+                @media screen and (max-width: 575px) {
+                    flex-direction: column;
+                    align-items: baseline;
+                }
+            }
+
+            .product-item__category {
+                @media screen and (max-width: 991px) {
+                    margin-left: 30px;
+                }
+                @media screen and (max-width: 450px) {
+                    margin-left: 0px;
+                }
+            }
+        }
+
+        .application-card__column--size {
+            @media screen and (max-width: 991px) {
+                order: 3;
+                flex: 0 0 20%;
+            }
+            @media screen and (max-width: 575px) {
+                flex: 0 0 30%;
+            }
+            @media screen and (max-width: 450px) {
+                flex: 0 0 50%;
+            }
+        }
+
+        .application-card__column--quantum {
+            @media screen and (min-width: 1050px) {
+                width: 17%;
+            }
+            @media screen and (max-width: 991px) {
+                order: 4;
+                flex: 0 0 80%;
+            }
+            @media screen and (max-width: 575px) {
+                flex: 0 0 70%;
+            }
+            @media screen and (max-width: 450px) {
+                flex: 0 0 50%;
+            }
+        }
+
+        .application-card__column--weight {
+            min-width: 168px;
+            @media screen and (min-width: 1050px) {
+                width: 20%;
+            }
+            @media screen and (max-width: 991px) {
+                order: 5;
+                flex: 0 0 30%;
+            }
+            @media screen and (max-width: 575px) {
+                flex: 0 0 40%;
+            }
+            @media screen and (max-width: 450px) {
+                flex: 0 0 50%;
+            }
+            @media screen and (max-width: 400px) {
+                flex: 0 0 100%;
+            }
+        }
+
+        .application-card__column--price {
+            min-width: 128px;
+
+            @media screen and (min-width: 1050px) {
+                width: 12%;
+            }
+            @media screen and (max-width: 991px) {
+                order: 6;
+            }
+            @media screen and (max-width: 575px) {
+                flex: 0 0 60%;
+            }
+            @media screen and (max-width: 450px) {
+                flex: 0 0 50%;
+            }
+            @media screen and (max-width: 400px) {
+                flex: 0 0 100%;
+            }
+
+            .form__input {
+                width: 72px;
+
+                @media screen and (max-width: 400px) {
+                    width: 170px;
+                }
+            }
+        }
+        .application-card__column--tools {
+            text-align: right;
+            padding-right: 15px;
+            @include adaptiv-value("padding-left", 25, 5, 1);
+
+            @media screen and (max-width: 991px) {
+                order: 2;
+                flex: 0 0 30%;
+                display: flex;
+                justify-content: flex-end;
+            }
+            @media screen and (max-width: 450px) {
+                flex: 0 0 26%;
+                align-items: flex-start;
+            }
+        }
+
+        .quantity {
+            @media screen and (max-width: 400px) {
+                max-width: initial;
+
+                .to-cart__measure {
+                    padding-left: 14px;
+                }
+            }
+
+            &__wrapper {
+                padding-right: 14px;
+                max-width: 123px;
+
+                @media screen and (max-width: 400px) {
+                    width: 170px;
+                    max-width: initial;
+                }
+            }
+
+            input {
+                padding: 6px 12px;
+                font-size: 14px;
+                line-height: 18px;
+
+                @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+                    font-size: 14px;
+                    line-height: 18px;
+                }
+            }
+        }
+
+        .select {
+            &__title {
+                border: 0;
+                border-radius: 0;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 1;
+                text-decoration: underline dashed;
+                min-width: 40px;
+            }
+
+            &__value {
+                height: auto;
+                font-size: 14px;
+                line-height: 1;
+
+                &::before {
+                    display: none;
+                }
+            }
+
+            &__options {
+                border: 1px solid $LGray3;
+            }
+
+            &__option {
+                text-align: left;
+                font-size: 14px;
+            }
+        }
+
+        .form {
+            &__item {
+                margin: 0;
+                display: flex;
+                align-items: center;
+            }
+
+            &__input {
+                height: 30px;
+                background-color: $LGray3;
+                border-radius: 3px;
+                margin-right: 14px;
+                font-size: 14px;
+                line-height: 18px;
+                color: $Gray;
+            }
+
+            &__label {
+                margin: 0;
+                font-weight: 600;
+                color: $Black;
+            }
+        }
+
+        .application-card__tools {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .application-card__tool {
+            color: $Gray;
+            font-size: 18px;
+            display: flex;
+            margin-right: 12px;
+            transition: 0.3s ease color 0s;
+
+            @media screen and (min-width: 992px) {
+                &:hover {
+                    color: rgba($color: $Gray, $alpha: 0.6);
+                }
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .order-terms__data {
+        @include adaptiv-value("padding-top", 34, 20, 1);
+        @include adaptiv-value("padding-bottom", 34, 20, 1);
+        @include adaptiv-value("margin-right", 40, 16, 1);
+    }
+
+    &__footer {
+        @include adaptiv-value("padding-top", 25, 20, 1);
+        @include adaptiv-value("padding-bottom", 25, 20, 1);
+        @include adaptiv-value("padding-right", 26, 16, 1);
+        @include adaptiv-value("padding-left", 26, 16, 1);
+    }
+
+    &__add-btn {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 15px;
+        border: 1px dashed #c4c4c4;
+        color: $DGray;
+        font-size: 24px;
+        background-color: $White;
+        transition: 0.3s ease color, background-color 0s;
+
+        @media screen and (min-width: 992px) {
+            &:hover {
+                color: rgba($color: $DGray, $alpha: 0.6);
+                background-color: #FCFCFC;
+            }
+        }
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(14px + 10 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+        }
+    }
+
+    &__confines {
+        display: flex;
+        align-items: center;
+        @include adaptiv-value("padding-top", 10, 6, 1);
+
+        @media screen and (max-width: 991px) {
+            flex-direction: column;
+            align-items: baseline;
+        }
+
+        .profile-edit__business {
+            @include adaptiv-value("margin-right", 22, 15, 1);
+
+            @media screen and (max-width: 991px) {
+                margin: 0px 0px 20px 0px;
+            }
+        }
+
+        .form-control {
+            border: 0
+        }
+        
+        .text-link {
+            color: $Black;
+
+            &::before {
+                border-width: 1px;
+                border-color: $Black;
+            }
+        }
+
+        input[name="datetimes"] {
+            cursor: pointer;
+
+            @media screen and (min-width: 401px) {
+                width: 213px;
+            }
+        }
+
+        .form-group--calendar {
+            @media screen and (max-width: 400px) {
+                max-width: initial !important;
+                flex: 0 0 100%;
+                margin-bottom: 20px !important;
+            }
+        }
+
+        .select {
+            @media screen and (max-width: 991px) {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__time {
+        .form-row {
+            margin: 0 -11px;
+        }
+        
+        .form-group {
+            padding: 0 11px;
+        }
+    }
+}

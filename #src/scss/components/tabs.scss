@@ -1,0 +1,37 @@
+.tabs-triggers {
+	display: flex;
+
+	// .tabs-triggers__item
+	&__item {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: 0.3s ease all 0s;
+		&::after {
+			content: "";
+			display: block;
+			background-color: $color-green;
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			opacity: 0;
+			transition: 0.3s ease all 0s;
+		}
+
+		&--active {
+			&::after {
+				opacity: 1;
+				width: 100%;
+				left: 0;
+			}
+		}
+	}
+}
+
+.tabs-content {
+	// .tabs-content__item
+	&__item {
+		display: none;
+	}
+}

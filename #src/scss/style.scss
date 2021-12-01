@@ -1,0 +1,339 @@
+@use "sass:math";
+
+@mixin font($font_name, $file_name, $weight, $style) {
+    @font-face {
+        font-family: $font_name;
+        font-display: swap;
+        src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+        font-weight: #{$weight};
+        font-style: #{$style};
+    }
+}
+
+// === libs ===
+@import "libs/index";
+
+// === fonts ===
+@import "fonts";
+@import "iconfonts";
+
+// === Base ===
+@import "base/index";
+
+// === Components ===
+@import "components/index";
+
+// === Pages ===
+@import "pages/index";
+
+.rating {
+    display: inline-flex;
+    flex-direction: row-reverse;
+
+    &__item {
+        @include adaptiv-value("margin-right", 20, 10, 1);
+        cursor: pointer;
+        color: $DGray;
+        transition: 0.3s ease color 0s;
+
+        @media screen and (min-width: 992px) {
+            &:hover,
+            &:hover ~ .rating__item {
+                color: $Yellow;
+            }
+        }
+
+        &:first-child {
+            margin-right: 0;
+        }
+
+        .icon-star {
+            font-size: 33px;
+
+            @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+                font-size: calc(25px + 8 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            }
+        }
+    }
+
+    &[data-total-value="1"] .rating__item:nth-child(n + 5),
+    &[data-total-value="2"] .rating__item:nth-child(n + 4),
+    &[data-total-value="3"] .rating__item:nth-child(n + 3),
+    &[data-total-value="4"] .rating__item:nth-child(n + 2),
+    &[data-total-value="5"] .rating__item:nth-child(n + 1) {
+        color: $Yellow;
+    }
+}
+
+.block-hidden {
+    display: none;
+}
+
+// calendar
+.drp-selected {
+    display: none !important;
+}
+
+.drp-buttons {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cancelBtn {
+    background-color: transparent;
+    font-size: 14px;
+    line-height: 1;
+    color: $Black;
+    margin-right: 6px;
+    padding: 0 !important;
+
+    &::before {
+        border-bottom: 1px solid $Black;
+    }
+}
+// calenda end
+
+// provider-request
+.provider-request {
+    .cart__person {
+        @media screen and (max-width: 575px) {
+            margin-bottom: 15px;
+        }
+    }
+
+    .cart__right {
+        padding: 0;
+    }
+
+    .order-terms__condition {
+        @media screen and (max-width: 575px) {
+            padding-left: 0;
+        }
+    }
+
+    .application-card {
+        &__column--size {
+            @media screen and (max-width: 991px) {
+                flex: 0 0 16.666%;
+            }
+            @media screen and (max-width: 767px) {
+                flex: 0 0 33.333%;
+            }
+        }
+
+        &__column--quantum {
+            @media screen and (max-width: 991px) {
+                flex: 0 0 16.666%;
+            }
+            @media screen and (max-width: 767px) {
+                flex: 0 0 33.333%;
+            }
+        }
+
+        &__column--weight {
+            font-weight: 600;
+
+            @media screen and (max-width: 991px) {
+                flex: 0 0 16.666%;
+            }
+            @media screen and (max-width: 767px) {
+                flex: 0 0 33.333%;
+            }
+        }
+
+        &__column--price {
+            font-weight: 600;
+            color: $Black;
+            text-align: right;
+
+            .provider-request__margin {
+                @include adaptiv-value("margin-right", 38, 8, 1);
+            }
+
+            .delivery__edit-save {
+                flex: 0 0 21px;
+            }
+
+            @media screen and (max-width: 991px) {
+                flex: 0 0 50%;
+            }
+            @media screen and (max-width: 767px) {
+                flex: 0 0 100%;
+                justify-content: flex-start;
+
+                .justify-content-end {
+                    justify-content: flex-start !important;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+// provider-request end
+
+// support
+.support {
+    @media screen and (min-width: 768px) {
+        height: calc(100vh - #{$size-header-height});
+    }
+    @media screen and (max-width: 767px) {
+        min-height: calc(100vh - #{$size-header-height-mobile});
+    }
+
+    &__desktop {
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
+    }
+
+    &__mobile {
+        @media screen and (min-width: 768px) {
+            display: none;
+        }
+
+        .base__heading {
+            display: flex;
+            flex-direction: column;
+            align-items: baseline;
+            margin-bottom: 32px;
+        }
+
+        .base__title {
+            margin-bottom: 16px;
+        }
+
+        .search {
+            width: 100%;
+            margin-bottom: 32px;
+        }
+
+        .support__button {
+            @media screen and (max-width: 575px) {
+                width: 100%;
+            }
+        }
+
+        .support__form {
+            margin-top: 24px;
+        }
+    }
+
+    .messages__row {
+    }
+
+    &__left {
+        @media screen and (min-width: 768px) {
+            @include adaptiv-value("flex-basis", 318, 180, 1);
+        }
+        @media screen and (max-width: 767px) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__items {
+        margin: 0;
+        background-color: $White;
+    }
+
+    &__item {
+        position: relative;
+        border-bottom: 1px solid $LGray3;
+        padding: 13px 20px;
+
+        @media screen and (min-width: 992px) {
+            &:hover {
+                background-color: rgba($color: $White, $alpha: 0.7);
+                &::before {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            height: 100%;
+            width: 8px;
+            background-color: $GreenM;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transform: scale(0);
+            transition: 0.3s ease all 0s;
+        }
+
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+
+    &__item-label {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
+        color: $Black;
+        margin-bottom: 2px;
+    }
+
+    &__item-date {
+        color: $DGray;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    &__item-status {
+        color: $DGray;
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .messages__right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__form {
+        width: 100%;
+        max-width: 480px;
+        margin: 0 auto;
+
+        .form-group {
+            @include adaptiv-value("margin-bottom", 28, 16, 1);
+        }
+
+        .form-control {
+            height: 49px;
+            background-color: $White;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+
+            &:focus {
+                box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1) !important;
+            }
+        }
+
+        textarea {
+            min-height: 83px;
+            padding: 18px;
+        }
+    }
+
+    &__title {
+        @include adaptiv-value("margin-bottom", 42, 20, 1);
+        color: $Gray;
+    }
+
+    &__btn {
+        @include adaptiv-value("margin-top", 36, 30, 1);
+        font-size: 18px;
+        line-height: 23px;
+        height: 49px;
+        width: 131px;
+    }
+}
+
+// support end

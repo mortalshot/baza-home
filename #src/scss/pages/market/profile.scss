@@ -1,0 +1,66 @@
+.profile {
+    .provider__card {
+        position: initial;
+        top: auto;
+        @include adaptiv-value("margin-bottom", 31, 15, 1);
+
+        @media screen and (max-width: 991px) {
+            margin-bottom: 15px;
+        }
+    }
+
+    .providers__item-person {
+        margin-bottom: 0;
+    }
+
+    &__actions {
+        display: flex;
+        padding-left: 13px;
+
+        @media screen and (min-width: 992px) {
+            flex-direction: column;
+        }
+        @media screen and (max-width: 450px) {
+            flex-direction: column;
+        }
+    }
+
+    &__link {
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 16px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        color: $DGray;
+        transition: 0.3s ease color 0s;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @media screen and (min-width: 992px) {
+            &:hover {
+                color: rgba($color: $DGray, $alpha: 0.6);
+            }
+        }
+        @media screen and (max-width: 991px) {
+            margin: 0px 16px 0px 0px;
+        }
+        @media screen and (max-width: 450px) {
+            margin: 0px 0 10px 0px;
+        }
+
+        i {
+            margin-right: 8px;
+            display: inline-flex;
+            font-size: 18px;
+            color: $Gray;
+        }
+
+        span {
+            text-decoration: underline;
+        }
+    }
+}
+//! profile page end

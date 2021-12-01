@@ -1,0 +1,55 @@
+._anim-left {
+	opacity: 0;
+	transform: translate(-100%, 0);
+	transition: 0.5s ease all 0s;
+}
+
+._anim-right {
+	opacity: 0;
+	transform: translate(100%, 0);
+	transition: 0.5s ease all 0s;
+}
+
+._anim-top {
+	transform: translate(0, 100%);
+	transition: 0.5s ease all 0s;
+}
+
+._anim-left._active,
+._active ._anim-left,
+._anim-right._active,
+._active ._anim-right,
+._anim-top._active,
+._active ._anim-top {
+	opacity: 1;
+	transform: translate(0);
+}
+
+@keyframes shake-bottom {
+	0%,
+	100% {
+		transform: rotate(0deg);
+		transform-origin: 50% 100%;
+	}
+	10% {
+		transform: rotate(2deg);
+	}
+	20%,
+	40%,
+	60% {
+		transform: rotate(-4deg);
+	}
+	30%,
+	50%,
+	70% {
+		transform: rotate(4deg);
+	}
+	80% {
+		transform: rotate(-2deg);
+	}
+	90% {
+		transform: rotate(2deg);
+	}
+}
+
+// !animation

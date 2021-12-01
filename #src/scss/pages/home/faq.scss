@@ -1,0 +1,169 @@
+// faq ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+.faq {
+    @include adaptiv-value("margin-bottom", 136, 80, 1);
+
+    &:first-child {
+        @include adaptiv-value("margin-top", 64, 40, 1);
+    }
+
+    &__title {
+        text-align: center;
+
+        &:not(:last-child) {
+            @include adaptiv-value("margin-bottom", 64, 40, 1);
+        }
+    }
+
+    &__tabs {
+        gap: 20px;
+
+        @media screen and (min-width: 575px) {
+            display: flex;
+            align-items: flex-start;
+        }
+    }
+
+    &__sidebar,
+    &__right {
+        @media screen and (min-width: 992px) {
+            flex: 0 1 50%;
+        }
+    }
+
+    &__sidebar {
+        @media screen and (max-width: 575px) {
+            display: block;
+
+            &:not(:last-child) {
+                margin-bottom: 40px;
+            }
+        }
+
+        .nav {
+            display: block;
+
+            @media screen and (max-width: 575px) {
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+
+                &::-webkit-scrollbar {
+                    width: 0;
+                    height: 0;
+                }
+            }
+
+            &-item {
+                @media screen and (min-width: 575px) {
+                    &:not(:last-child) {
+                        @include adaptiv-value("margin-bottom", 24, 16, 1);
+                    }
+                }
+                @media screen and (max-width: 575px) {
+                    &:not(:last-child) {
+                        margin-right: 24px;
+                    }
+                }
+            }
+
+            &-link {
+                display: inline-flex;
+                padding: 0;
+                border-radius: 0;
+                background: transparent;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 18px;
+                color: $Black;
+                transition: $transition ease color 0s;
+
+                @media (any-hover: hover) {
+                    &:not(.active) {
+                        &:hover {
+                            color: rgba($color: $GreenM, $alpha: 0.6);
+                        }
+                    }
+                }
+                @media screen and (max-width: 575px) {
+                    white-space: nowrap;
+                }
+
+                &.active {
+                    background: transparent;
+                    color: $GreenM;
+                    cursor: auto;
+                }
+            }
+        }
+    }
+
+    &__main {
+        @media screen and (min-width: 992px) {
+            flex: 0 0 50%;
+        }
+
+        .tab-content {
+            max-width: 552px;
+
+            @media screen and (min-width: 992px) {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        .accordion {
+            margin-top: -24px;
+
+            &__item {
+                border-bottom: 1px solid #e0e0e0;
+            }
+
+            &__title {
+                font-weight: 600;
+                @include adaptiv-font(18, 23, 14, 1);
+                padding: 24px 37px 24px 0;
+                text-decoration: underline transparent from-font;
+                text-underline-offset: 3px;
+                transition: $transition ease text-decoration 0s;
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        text-decoration: underline $Black from-font;
+                    }
+                }
+
+                &::before {
+                    display: none;
+                }
+                &::after {
+                    display: block;
+                    width: 22px;
+                    height: 22px;
+                    background: url(../img/icons/accordion.svg) no-repeat center/contain;
+                    right: 0;
+                    transform: translateY(-50%);
+                }
+
+                &.active {
+                    &::after {
+                        transform: translateY(-50%) rotate(45deg);
+                    }
+                }
+            }
+
+            &__text {
+                padding-bottom: 24px;
+
+                @media screen and (min-width: 575px) {
+                    max-width: 454px;
+                }
+            }
+        }
+    }
+
+    &__right {
+        @media screen and (max-width: 991px) {
+            display: none;
+        }
+    }
+}

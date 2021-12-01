@@ -1,0 +1,128 @@
+.capabilities {
+	&__title {
+		@include adaptiv-value("margin-bottom", 110, 40, 1);
+	}
+
+	&__item {
+		@include adaptiv-value("margin-bottom", 140, 66, 1);
+	}
+}
+
+.capability {
+	&__row {
+		display: flex;
+
+		@media screen and (max-width: 650px) {
+			display: block;
+		}
+	}
+
+	&--reverse {
+		.capability__row {
+			flex-direction: row-reverse;
+		}
+
+		.capability__content {
+			@include adaptiv-value("padding-left", 30, 0, 1);
+			@include adaptiv-value("padding-right", 150, 20, 1);
+
+			@media screen and (max-width: 767px) {
+				padding: 0px 20px 0px 0;
+			}
+			@media screen and (max-width: 650px) {
+				padding: 0;
+			}
+		}
+	}
+	&__image {
+		flex: 0 0 48.5%;
+
+		@media screen and (max-width: 650px) {
+			max-width: 70%;
+			margin: 0 auto 30px;
+		}
+		@media screen and (max-width: 500px) {
+			max-width: 100%;
+			margin-bottom: 35px;
+		}
+
+		img {
+			box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.15);
+			border-radius: 6px;
+
+			@media screen and (max-width: 500px) {
+				box-shadow: 4.61111px 9.22222px 13.8333px rgba(0, 0, 0, 0.15);
+				border-radius: 3px;
+			}
+		}
+	}
+
+	&__content {
+		@include adaptiv-value("padding-top", 45, 20, 1);
+		@include adaptiv-value("padding-left", 150, 20, 1);
+		flex: 1 1 auto;
+
+		@media screen and (max-width: 767px) {
+			padding: 0px 0px 0px 20px;
+		}
+		@media screen and (max-width: 650px) {
+			padding: 0;
+		}
+	}
+
+	&__title {
+		@include adaptiv-value("margin-bottom", 40, 30, 1);
+	}
+
+	.nav-pills {
+		margin-bottom: 32px;
+	}
+
+	.nav-pills .nav-link {
+		font-weight: 600;
+		font-size: calc(16px + 6 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+		line-height: calc(28 / 22);
+		color: $Black;
+		transition: 0.3s ease all 0s;
+		border-radius: 0;
+		padding: 0;
+		@include adaptiv-value("margin-right", 32, 15, 0);
+
+		&::last-child {
+			margin-right: 0;
+		}
+
+		@media screen and (min-width: 992px) {
+			&:hover {
+				color: rgba($color: $GreenM, $alpha: 0.75);
+			}
+		}
+	}
+
+	.nav-pills .nav-link.active,
+	.nav-pills .show > .nav-link {
+		background-color: transparent;
+		color: $GreenM;
+		border-bottom: 2px solid $LGray;
+	}
+
+	.tab-content {
+		max-width: 410px;
+
+		@media screen and (min-width: $layoutDesktop + "px") {
+			max-width: 90%;
+		}
+		@media screen and (max-width: 650px) {
+			max-width: 100%;
+		}
+	}
+
+	.tab-pane {
+		line-height: calc(22 / 16);
+	}
+
+	.rating {
+		@include adaptiv-value("margin-bottom", 32, 10, 1);
+	}
+}
+// !capabilities end

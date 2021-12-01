@@ -1,0 +1,148 @@
+.service {
+	@include adaptiv-value("margin-bottom", 145, 30, 1);
+
+	&__title {
+		@include adaptiv-value("margin-bottom", 80, 46, 1);
+	}
+
+	&__row {
+		display: flex;
+		margin: 0 -15px;
+
+		@media screen and (min-width: #{$size-container + px}) {
+			margin: 0 -36px;
+		}
+		@media screen and (max-width: 991px) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__column {
+		flex: 0 0 33.333%;
+		padding: 0 15px;
+
+		@media screen and (min-width: #{$size-container + px}) {
+			padding: 0 36px;
+		}
+		@media screen and (max-width: 991px) {
+			flex: 0 0 50%;
+			margin-bottom: 50px;
+		}
+		@media screen and (max-width: 575px) {
+			flex: 0 0 100%;
+			margin-bottom: 64px;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+
+			@media screen and (max-width: 991px) {
+				flex: 0 0 100%;
+			}
+		}
+	}
+}
+
+.service-card {
+	&__image {
+		position: relative;
+		padding-bottom: 58%;
+		@include adaptiv-value("margin-bottom", 42, 30, 1);
+
+		@media screen and (max-width: 575px) {
+			max-width: 70%;
+			margin: 0 auto 15px;
+			padding-bottom: 50%;
+		}
+		@media screen and (max-width: 500px) {
+			max-width: 100%;
+		}
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 6px;
+		}
+	}
+
+	&__title {
+		@include adaptiv-value("margin-bottom", 28, 14, 1);
+		display: flex;
+		align-items: center;
+
+		svg {
+			margin-left: 5px;
+		}
+	}
+
+	&__text {
+		@include adaptiv-value("margin-bottom", 28, 10, 1);
+		display: flex;
+		align-items: center;
+	}
+
+	&__cities {
+		display: flex;
+		position: relative;
+	}
+
+	&__city {
+		font-weight: 600;
+		@include adaptiv-value("padding-right", 28, 10, 0);
+		white-space: nowrap;
+
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+
+	&__caption {
+		font-weight: 600;
+		@include adaptiv-value("margin-bottom", 20, 10, 1);
+	}
+
+
+
+	&--no-image {
+		.popup-over__body {
+			@media screen and (min-width: 992px) {
+				width: 542px;
+				right: 0;
+				left: auto;
+			}
+		}
+	}
+}
+
+.storage-service,
+.service-route {
+	margin-bottom: 7px;
+}
+.storage-service {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	white-space: normal;
+
+	&::after {
+		content: "";
+		display: block;
+		width: 16px;
+		height: 17px;
+		flex: 0 0 16px;
+	}
+}
+.storage-service--active {
+	&::after {
+		background: url(../img/icons/check.svg) no-repeat center/cover;
+	}
+}
+.storage-service--disabled {
+	&::after {
+		background: url(../img/icons/uncheck.svg) no-repeat center/cover;
+	}
+}

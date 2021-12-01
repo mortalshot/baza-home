@@ -1,0 +1,507 @@
+.blog {
+    @include adaptiv-value("margin-top", 46, 30, 1);
+    @include adaptiv-value("margin-bottom", 92, 30, 1);
+    overflow-y: hidden;
+
+    &__heading {
+        @include adaptiv-value("margin-bottom", 39, 20, 1);
+    }
+
+    &__title {
+        @include adaptiv-value("margin-bottom", 39, 20, 1);
+    }
+
+    &__nav-list {
+        display: flex;
+        @include adaptiv-value("padding-bottom", 48, 20, 1);
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: thin;
+
+        &::-webkit-scrollbar {
+            height: 5px;
+        }
+        &::-webkit-scrollbar-track {
+            background-color: #909090;
+            border-radius: 3px;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 3px;
+            background-color: #363636;
+        }
+    }
+
+    &__nav-item {
+        margin: 0 40px 0 0;
+        @include adaptiv-value("margin-right", 40, 10, 1);
+    }
+
+    &__nav-link {
+        font-weight: 600;
+        color: $Black;
+        white-space: nowrap;
+        position: relative;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 4px;
+            bottom: 0;
+            left: 0;
+            background-color: $GreenM;
+            transform: translate(0, 7px) scale(0);
+            transition: 0.3s ease all 0s;
+        }
+
+        &.active {
+            color: $Black;
+
+            &::after {
+                transform: translate(0, 7px) scale(1);
+            }
+        }
+    }
+
+    &__row {
+        @media screen and (min-width: 768px) {
+            display: flex;
+        }
+    }
+
+    &__body {
+        flex: 1 1 auto;
+        @include adaptiv-value("padding-right", 72, 0, 1);
+
+        @media screen and (max-width: 767px) {
+            padding: 0px 0px 25px 0px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        @include adaptiv-value("margin-top", -27.5, -10, 1);
+        @include adaptiv-value("margin-left", -20, -8, 1);
+        @include adaptiv-value("margin-right", -20, -8, 1);
+    }
+
+    &__card {
+        flex: 0 0 33.333%;
+        @include adaptiv-value("padding-top", 27.5, 10, 1);
+        @include adaptiv-value("padding-bottom", 27.5, 10, 1);
+        @include adaptiv-value("padding-left", 20, 8, 1);
+        @include adaptiv-value("padding-right", 20, 8, 1);
+
+        @media screen and (min-width: 1600px) {
+            flex: 0 0 25%;
+        }
+        @media screen and (max-width: 991px) {
+            flex: 0 0 50%;
+        }
+        @media screen and (max-width: 450px) {
+            flex: 0 0 100%;
+        }
+    }
+
+    &__card-img {
+        display: block;
+        position: relative;
+        padding-bottom: 67%;
+        @include adaptiv-value("margin-bottom", 24, 10, 1);
+        transition: 0.3s ease opacity 0s;
+
+        @media screen and (min-width: 992px) {
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 3px;
+        }
+    }
+
+    &__card-title {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        color: $Black;
+        display: block;
+        @include adaptiv-value("margin-bottom", 12, 8, 1);
+        transition: 0.3s ease opacity 0s;
+
+        @media screen and (min-width: 992px) {
+            &:hover {
+                color: $Black;
+                opacity: 0.6;
+            }
+        }
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(14px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(19 / 16);
+        }
+    }
+
+    &__card-date {
+        font-size: 14px;
+        line-height: 18px;
+        color: $Gray;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(12px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(18 / 14);
+        }
+    }
+
+    &__sidebar {
+        flex: 0 0 261px;
+        @include adaptiv-value("flex-basis", 261, 160, 1);
+    }
+
+    &__sidebar-item {
+        font-size: 16px;
+        line-height: 21px;
+        color: $Black;
+        @include adaptiv-value("padding-bottom", 32, 20, 1);
+        @include adaptiv-value("margin-bottom", 32, 20, 1);
+        border-bottom: 1px solid $LGray;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(14px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(21 / 16);
+        }
+    }
+
+    &__sidebar-title {
+        color: $Black;
+        display: block;
+        @include adaptiv-value("margin-bottom", 21, 10, 1);
+        transition: 0.3s ease opacity 0s;
+
+        @media screen and (min-width: 992px) {
+            &:hover {
+                color: $Black;
+                opacity: 0.6;
+            }
+        }
+    }
+
+    &__sidebar-date {
+        font-weight: 500;
+    }
+
+    &--market {
+        .blog__body {
+            padding-right: 0;
+        }
+
+        .blog__card {
+            flex: 0 0 25%;
+
+            @media screen and (max-width: 991px) {
+                flex: 0 0 33.333%;
+            }
+            @media screen and (max-width: 767px) {
+                flex: 0 0 50%;
+            }
+            @media screen and (max-width: 450px) {
+                flex: 0 0 100%;
+            }
+        }
+    }
+
+    &--platform {
+        .blog {
+            &__card {
+                flex: 0 0 25%;
+
+                @media screen and (max-width: 991px) {
+                    flex: 0 0 33.333%;
+                }
+                @media screen and (max-width: 767px) {
+                    flex: 0 0 50%;
+                }
+                @media screen and (max-width: 450px) {
+                    flex: 0 0 100%;
+                    padding: 15px 8px;
+                }
+            }
+
+            &__card-title {
+                font-weight: 400;
+            }
+
+            &__card-date {
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 21px;
+                color: $Black;
+
+                @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+                    font-size: calc(14px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+                    line-height: calc(21 / 16);
+                }
+            }
+        }
+    }
+
+    .text-link {
+        color: $GreenM;
+        display: inline-flex;
+        align-items: center;
+        transition: 0.3s ease color, opacity 0s;
+
+        &::before {
+            display: none;
+        }
+
+        @media screen and (min-width: 992px) {
+            &:hover {
+                color: rgba($color: $GreenM, $alpha: 0.6);
+            }
+        }
+
+        span {
+            margin-right: 8px;
+        }
+
+        i {
+            border-radius: 50%;
+            height: 20px;
+            width: 20px;
+            background-color: $GreenM;
+            font-size: 10px;
+            color: $White;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .pagination--fixed {
+        @media screen and (max-width: 660px) {
+            bottom: 25px;
+        }
+    }
+}
+
+.article {
+    &__heading {
+        margin-bottom: 25px;
+    }
+
+    &__title {
+        display: flex;
+        max-width: 754px;
+
+        .base__back {
+            margin-top: 10px;
+            font-size: 24px;
+            color: $Black;
+            @include adaptiv-value("margin-right", 23, 10, 1);
+        }
+    }
+
+    &__body {
+        @media screen and (min-width: 768px) {
+            display: flex;
+        }
+    }
+
+    &__content {
+        flex: 0 0 75%;
+        @include adaptiv-value("padding-right", 60, 0, 1);
+
+        @media screen and (max-width: 767px) {
+            padding: 0px 0px 30px 0px;
+        }
+    }
+
+    &__content-wrapper {
+        background-color: $White;
+        border-radius: 3px;
+        @include adaptiv-value("padding-top", 32, 20, 1);
+        @include adaptiv-value("padding-bottom", 34, 20, 1);
+        @include adaptiv-value("padding-left", 50, 15, 1);
+        @include adaptiv-value("padding-right", 50, 15, 1);
+    }
+
+    &__top-img {
+        position: relative;
+        padding-bottom: 46%;
+        @include adaptiv-value("margin-bottom", 36, 20, 1);
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 3px;
+        }
+    }
+
+    &__top-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include adaptiv-value("margin-bottom", 32, 20, 1);
+    }
+
+    &__top-date {
+        font-size: 14px;
+        line-height: 18px;
+        color: $Gray;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(12px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(18 / 14);
+        }
+    }
+
+    &__share {
+        font-size: 20px;
+        color: $Gray;
+        transition: 0.3s ease opacity 0s;
+
+        @media screen and (min-width: 992px) {
+            &:hover {
+                color: $Gray;
+                opacity: 0.6;
+            }
+        }
+    }
+
+    &__inner {
+        &:not(:last-child) {
+            border-bottom: 1px solid $LGray3;
+            @include adaptiv-value("margin-bottom", 40, 24, 1);
+            @include adaptiv-value("padding-bottom", 40, 24, 1);
+        }
+    }
+
+    &__sidebar {
+    }
+
+    &__sidebar-wrapper {
+    }
+
+    &__sidebar-item {
+        @include adaptiv-value("padding-bottom", 40, 20, 1);
+        @include adaptiv-value("margin-bottom", 40, 20, 1);
+        border-bottom: 1px solid $LGray;
+
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+
+    &__menu-list {
+        margin: 0;
+    }
+
+    &__menu-item {
+        &:not(:last-child) {
+            @include adaptiv-value("margin-bottom", 24, 16, 1);
+        }
+
+        a {
+            font-weight: 600;
+            color: $Black;
+            text-decoration: underline transparent from-font;
+            text-underline-offset: 3px;
+            transition: $transition ease all 0s;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $GreenM;
+                    text-decoration: underline $GreenM from-font;
+                }
+            }
+
+            &.active {
+                color: $GreenM;
+            }
+        }
+    }
+
+    &__sidebar-title {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        color: $Black;
+        display: block;
+        @include adaptiv-value("margin-bottom", 12, 10, 1);
+        transition: 0.3s ease opacity 0s;
+
+        @media screen and (min-width: 992px) {
+            &:hover {
+                color: $Black;
+                opacity: 0.6;
+            }
+        }
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(14px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(19 / 16);
+        }
+    }
+
+    &__sidebar-date {
+        font-size: 14px;
+        line-height: 18px;
+        color: $Gray;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(12px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(18 / 14);
+        }
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include adaptiv-value("margin-top", 32, 20, 1);
+    }
+
+    &.privacy {
+        .article__body {
+            @media screen and (max-width: 767px) {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+        }
+
+        .article__sidebar {
+            @media screen and (max-width: 767px) {
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+
+.sidebar {
+    
+    &__wrapper {
+        &._fixed-top {
+            position: fixed;
+        }
+
+        &._fixed-bottom {
+            position: absolute;
+        }
+    }
+}
+//! blog page end

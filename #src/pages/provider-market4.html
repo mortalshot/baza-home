@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поставщик / Потребности</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body class="site">
+    <div class="site__wrap drawer-on drawer-closed">
+        <div class="navigation-drawer" onclick="">
+            <div class="navigation-drawer__mobile">
+                <div class="navigation-drawer__account" data-da="navbar__row, 1, 660">
+                    <a href="" class="account__avatar">
+                        <img src="../img/market/avatar.png" alt="">
+                    </a>
+                </div>
+                <div class="navigation-drawer__burger">
+                    <svg width="21" height="19" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.5" y="18.75" width="2" height="10" transform="rotate(-90 0.5 18.75)" fill="white" fill-opacity="0.2" />
+                        <rect x="0.5" y="10.75" width="2" height="20" transform="rotate(-90 0.5 10.75)" fill="white" fill-opacity="0.2" />
+                        <rect x="0.5" y="2.75" width="2" height="14" transform="rotate(-90 0.5 2.75)" fill="white" fill-opacity="0.2" />
+                    </svg>
+                </div>
+                <div class="navigation-drawer__result">Фильтр (<span>10</span>)</div>
+                <a href="" class="filter-selected__reset">Cбросить</a>
+            </div>
+            <div class="navigation-drawer__wrapper">
+                <div class="navigation-drawer__account account">
+                    <div class="account__row">
+                        <a href="" class="account__avatar">
+                            <img src="../img/market/avatar.png" alt="">
+                        </a>
+                        <div class="account__person">
+                            <a href="" class="account__name">Рамиль Саидов</a>
+                            <div class="account__role">Покупатель</div>
+                        </div>
+                        <a href="" class="account__logout">
+                            <i class="icon-exit"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="navigation-drawer__content filter">
+                    <div class="filter__products">
+                        <div class="filter__stirps filter-stirps">
+                            <div class="filter-stirps__row row">
+                                <div class="filter-stirps__item col-6">
+                                    <div class="filter-stirps__checkbox checkbox">
+                                        <input id="filterStirps-1" type="checkbox" name="stirp" class="checkbox__input">
+                                        <label for="filterStirps-1" class="checkbox__label">
+                                            <div class="filter-stirps__icon"><img src="../img/market/stirp/stirp-1.png" alt="">
+                                            </div>
+                                            <div class="filter-stirps__name">Овощи</div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter-stirps__item col-6">
+                                    <div class="filter-stirps__checkbox checkbox">
+                                        <input id="filterStirps-2" type="checkbox" name="stirp" class="checkbox__input">
+                                        <label for="filterStirps-2" class="checkbox__label">
+                                            <div class="filter-stirps__icon"><img src="../img/market/stirp/stirp-2.png" alt="">
+                                            </div>
+                                            <div class="filter-stirps__name">Грибы</div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter-stirps__item col-6">
+                                    <div class="filter-stirps__checkbox checkbox">
+                                        <input id="filterStirps-3" type="checkbox" name="stirp" class="checkbox__input">
+                                        <label for="filterStirps-3" class="checkbox__label">
+                                            <div class="filter-stirps__icon"><img src="../img/market/stirp/stirp-3.png" alt="">
+                                            </div>
+                                            <div class="filter-stirps__name">Фрукты</div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter-stirps__item col-6">
+                                    <div class="filter-stirps__checkbox checkbox">
+                                        <input id="filterStirps-4" type="checkbox" name="stirp" class="checkbox__input">
+                                        <label for="filterStirps-4" class="checkbox__label">
+                                            <div class="filter-stirps__icon"><img src="../img/market/stirp/stirp-4.png" alt="">
+                                            </div>
+                                            <div class="filter-stirps__name">Экзотика</div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter-stirps__item col-6">
+                                    <div class="filter-stirps__checkbox checkbox">
+                                        <input id="filterStirps-5" type="checkbox" name="stirp" class="checkbox__input">
+                                        <label for="filterStirps-5" class="checkbox__label">
+                                            <div class="filter-stirps__icon"><img src="../img/market/stirp/stirp-5.png" alt="">
+                                            </div>
+                                            <div class="filter-stirps__name">Ягоды</div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter-stirps__item col-6">
+                                    <div class="filter-stirps__checkbox checkbox">
+                                        <input id="filterStirps-6" type="checkbox" name="stirp" class="checkbox__input">
+                                        <label for="filterStirps-6" class="checkbox__label">
+                                            <div class="filter-stirps__icon"><img src="../img/market/stirp/stirp-6.png" alt="">
+                                            </div>
+                                            <div class="filter-stirps__name">Зелень</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter__status filter-status">
+                            <div class="filter-category__title">Статус заявки</div>
+                            <div class="filter-status__row">
+                                <div class="filter-status__item">
+                                    <div class="filter-status__checkbox checkbox">
+                                        <input id="filterStatus-1" type="checkbox" name="Status" class="checkbox__input">
+                                        <label for="filterStatus-1" class="checkbox__label applications__status applications__status--new">
+                                            <div class="filter-status__name">Новый</div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter-status__item">
+                                    <div class="filter-status__checkbox checkbox">
+                                        <input id="filterStatus-2" type="checkbox" name="Status" class="checkbox__input">
+                                        <label for="filterStatus-2" class="checkbox__label applications__status applications__status--open">
+                                            <div class="filter-status__name">Открыт</div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter-status__item">
+                                    <div class="filter-status__checkbox checkbox">
+                                        <input id="filterStatus-3" type="checkbox" name="Status" class="checkbox__input">
+                                        <label for="filterStatus-3" class="checkbox__label applications__status applications__status--closed">
+                                            <div class="filter-status__name">Завершен</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter__budget filter-budget">
+                            <div class="filter-category__title">Бюджет закупки</div>
+                            заглушка
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation-drawer__footer">
+                    <div class="filter-selected">
+                        <div class="filter-selected__items" data-da="navigation-drawer__content, last, 660">
+                            <div class="filter-selected__item">
+                                <a href="" class="filter-selected__link">
+                                    <span class="filter-selected__name">овощи</span>
+                                </a>
+                            </div>
+                            <div class="filter-selected__item">
+                                <a href="" class="filter-selected__link">
+                                    <span class="filter-selected__name">фрукты</span>
+                                </a>
+                            </div>
+                            <div class="filter-selected__item">
+                                <a href="" class="filter-selected__link">
+                                    <span class="filter-selected__name">грибы</span>
+                                </a>
+                            </div>
+                            <div class="filter-selected__item">
+                                <a href="" class="filter-selected__link">
+                                    <span class="filter-selected__name">новый</span>
+                                </a>
+                            </div>
+                            <div class="filter-selected__item">
+                                <a href="" class="filter-selected__link">
+                                    <span class="filter-selected__name">от 10000 до 50 млн руб</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="filter-selected__row">
+                            <div class="filter-selected__result">Результатов <span>10230</span></div>
+                            <a href="" class="filter-selected__reset">Cбросить</a>
+                            <a href="" class="filter-selected__apply">Применить</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <header class="site__header header lock-padding">
+            <div class="header__inner header__provider">
+                <div class="header__container container-fluid">
+                    <nav class="navbar">
+                        <div class="navbar__row">
+                            <div class="navbar-brand" data-da="header__provider .header__controls, first, 660">
+                                <a class="navbar-brand__link" href="/">Бaza</a>
+                            </div>
+                            <div class="header__menu">
+                                <ul class="navbar-nav flex-row">
+                                    <li class="nav-item">
+                                        <a href="" class="nav-link active" data-value="Потребности">Потребности</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="" class="nav-link" data-value="Продукты">Мои продукты</a>
+                                    </li>
+                                    <li class="nav-item nav-item--notification">
+                                        <a href="" class="nav-link" data-value="Поставки">Поставки</a>
+                                    </li>
+                                </ul>
+                                <ul class="header__controls controls" data-da="header__provider .navbar, first, 660">
+                                    <li class="controls__item active">
+                                        <a href="" class="controls__link"><i class="icon-team"></i></a>
+                                    </li>
+                                    <li class="controls__item">
+                                        <a href="" class="controls__link"><i class="icon-purse"></i></a>
+                                    </li>
+                                    <li class="controls__item">
+                                        <a href="" class="controls__link"><i class="icon-message"></i></a>
+                                    </li>
+                                    <li class="controls__item">
+                                        <a href="" class="controls__link"><i class="icon-notifications"></i></a>
+                                    </li>
+                                    <li class="controls__item">
+                                        <a href="" class="controls__link controls__link--has-children"><i class="icon-dots"></i></a>
+                                        <ul class="controls__sub-menu">
+                                            <li class="controls__menu-item"><a href="">О проекте</a></li>
+                                            <li class="controls__menu-item"><a href="">Новости</a></li>
+                                            <li class="controls__menu-item"><a href="">Страндарты качества</a></li>
+                                            <li class="controls__menu-item"><a href="">Правила работы</a></li>
+                                            <li class="controls__menu-item"><a href="">Служба поддержки</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main class="site__main">
+            <section class="bargaining application base">
+                <div class="base__container container">
+                    <div class="base__heading application__heading">
+                        <div class="base__title">
+                            <div class="d-flex align-items-center mb-1">
+                                <a href="" class="base__back"><i class="icon-chevron-left"></i></a>
+                                <h1 class="application__title title-market">Торги №235784 </h1>
+                            </div>
+                            <div class="d-flex align-items-center mb-1 flex-wrap">
+                                <div class="application__status">
+                                    <div class="applications__status applications__status--open">Открыто 06.12.20,12:00 - 18.12.20,19:00</div>
+                                </div>
+                                <div class="applications__view">
+                                    <i class="icon-eye"></i>
+                                    <span>1203</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="application__right mb-1">
+                            <div class="application__time mr-0">
+                                <div class="application__time-timer">3:02:01</div>
+                                <div class="application__time-label">До завершения торгов</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="base__content">
+                        <div class="application__card application-card">
+                            <div class="application-card__heading">
+                                <div class="cart__heading-row">
+                                    <div class="cart__left">
+                                        <div class="delivery-card__seller-info">
+                                            <div class="cart__person">
+                                                <div class="cart__account">
+                                                    <a href="" class="cart__avatar account__avatar">
+                                                        <img src="../img/market/users/user-1.png" alt="">
+                                                    </a>
+                                                    <div class="cart__owner">
+                                                        <a href="" class="cart__owner-name">Рамиль Саидов</a>
+                                                        <div class="cart__owner-rating">
+                                                            <i class="icon-star-rating"></i>
+                                                            <i class="icon-star-rating"></i>
+                                                            <i class="icon-star-rating"></i>
+                                                            <i class="icon-star-rating"></i>
+                                                            <i class="icon-star-rating icon-star-rating--dis"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cart__about">
+                                                <div class="cart__company">ООО “ФРУКТОВАЯ БАЗА”</div>
+                                                <div class="cart__location">
+                                                    <i class="icon-map-marker"></i>
+                                                    <span>Санкт-Петербург</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cart__right">
+                                        <div class="cart__phone cart__link-wrapper">
+                                            <a href="tel:" class="cart__phone-link cart__link">+7 911 *** ** **</a>
+                                            <a href="" class="cart__phone-show"><i class="icon-eye2"></i></a>
+                                        </div>
+                                        <div class="cart__link-wrapper">
+                                            <a href="mailto:royal-007@mail.ru" class="cart__link">royal-007@mail.ru</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order-terms__condition">
+                                    <div class="order-terms__condition-title">
+                                        <span>Транзитная сделка</span>
+                                    </div>
+                                </div>
+                                <div class="order-terms__condition">
+                                    <div class="order-terms__condition-title">
+                                        <span>Доставка 12.01.2021,19:00 по адресу Санкт-Петербург, ул. Софийская, д. 60 склад 22/3</span>
+                                    </div>
+                                    <div class="order-terms__condition-text">Приемка-передача по адресу покупателя</div>
+                                </div>
+                                <div class="order-terms__condition">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-end">
+                                        <div class="pr-4 mb-2">
+                                            <div class="order-terms__condition-title">
+                                                <span>Оплата безналичным расчетом</span>
+                                            </div>
+                                            <div class="order-terms__condition-text">Отсрочка платежа 10 дней</div>
+                                        </div>
+                                        <div class="delivery-card__seller-btn mb-2">
+                                            <a href="" class="delivery-card__btn">
+                                                <i class="icon-chat"></i>
+                                                <span> Начать чат </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="application-card__body">
+                                <div id="bargainingAccordion" class="accordion accordion-one">
+                                    <div class="accordion__item">
+                                        <h2 class="accordion__title product-item__row">
+                                            <div class="product-item__column product-item__column--name">
+                                                <div class="product-item__content">
+                                                    <div class="product-item__product">
+                                                        <div class="product-item__product-image"><img src="../img/market/stirp/stirp-1.png" alt=""></div>
+                                                        <div class="product-item__product-name">Картофель молодой, Россия</div>
+                                                    </div>
+                                                    <div class="product-item__category">
+                                                        <div class="product-item__category-name">Первый сорт</div>
+                                                        <div class="product-item__category-icon"><i class="icon-1"></i></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-item__column product-item__column--size">—</div>
+                                            <div class="product-item__column product-item__column--quantum">Квант 15 кг</div>
+                                            <div class="product-item__column product-item__column--weight">
+                                                500 000 кг
+                                                <div class="messages__person-notification">123</div>
+                                            </div>
+                                        </h2>
+                                        <div class="accordion__text">
+                                            <table class="application-card__table table">
+                                                <tbody>
+                                                    <tr class="application-card__row table__row">
+                                                        <td class="table__column application-card__column--name">
+                                                            <a href="" class="person">
+                                                                <div class="person__rating">
+                                                                    <i class="icon-star-rating"></i>
+                                                                    <span>4.2</span>
+                                                                </div>
+                                                                <div class="person__name bargaining__name">Рамиль Саидов</div>
+                                                            </a>
+                                                        </td>
+                                                        <td class="table__column application-card__column--company">ООО “ЮЭФСИ”</td>
+                                                        <td class="table__column application-card__column--location">
+                                                            <div class="product-item__location">
+                                                                <i class="icon-map-marker"></i>
+                                                                <span>Санкт-Петербург</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="table__column application-card__column--lot">Лот №3 от 06.12.20,19:22</td>
+                                                        <td class="table__column application-card__column--label">
+                                                            <div class="product-item__category applications__status--best">
+                                                                <div class="product-item__category-name">Лучшая предложение</div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="table__column application-card__column--price">11 руб</td>
+                                                    </tr>
+                                                    <tr class="application-card__row table__row">
+                                                        <td class="table__column application-card__column--name">
+                                                            <a href="" class="person">
+                                                                <div class="person__rating">
+                                                                    <i class="icon-star-rating"></i>
+                                                                    <span>4.2</span>
+                                                                </div>
+                                                                <div class="person__name bargaining__name">Рамиль Саидов</div>
+                                                            </a>
+                                                        </td>
+                                                        <td class="table__column application-card__column--company">ООО “ЮЭФСИ”</td>
+                                                        <td class="table__column application-card__column--location">
+                                                            <div class="product-item__location">
+                                                                <i class="icon-map-marker"></i>
+                                                                <span>Санкт-Петербург</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="table__column application-card__column--lot">Лот №3 от 06.12.20,19:22</td>
+                                                        <td class="table__column application-card__column--label">
+
+                                                        </td>
+                                                        <td class="table__column application-card__column--price">11 руб</td>
+                                                    </tr>
+                                                    <tr class="application-card__row table__row">
+                                                        <td class="table__column application-card__column--name">
+                                                            <a href="" class="person">
+                                                                <div class="person__rating">
+                                                                    <i class="icon-star-rating"></i>
+                                                                    <span>4.2</span>
+                                                                </div>
+                                                                <div class="person__name bargaining__name">Рамиль Саидов</div>
+                                                            </a>
+                                                        </td>
+                                                        <td class="table__column application-card__column--company">ООО “ЮЭФСИ”</td>
+                                                        <td class="table__column application-card__column--location">
+                                                            <div class="product-item__location">
+                                                                <i class="icon-map-marker"></i>
+                                                                <span>Санкт-Петербург</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="table__column application-card__column--lot">Лот №3 от 06.12.20,19:22</td>
+                                                        <td class="table__column application-card__column--label">
+
+                                                        </td>
+                                                        <td class="table__column application-card__column--price">11 руб</td>
+                                                    </tr>
+                                                    <tr class="application-card__row table__row">
+                                                        <td class="table__column application-card__column--name">
+                                                            <a href="" class="person">
+                                                                <div class="person__rating">
+                                                                    <i class="icon-star-rating"></i>
+                                                                    <span>4.2</span>
+                                                                </div>
+                                                                <div class="person__name bargaining__name">Рамиль Саидов</div>
+                                                            </a>
+                                                        </td>
+                                                        <td class="table__column application-card__column--company">ООО “ЮЭФСИ”</td>
+                                                        <td class="table__column application-card__column--location">
+                                                            <div class="product-item__location">
+                                                                <i class="icon-map-marker"></i>
+                                                                <span>Санкт-Петербург</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="table__column application-card__column--lot">Лот №3 от 06.12.20,19:22</td>
+                                                        <td class="table__column application-card__column--label">
+
+                                                        </td>
+                                                        <td class="table__column application-card__column--price">11 руб</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <div class="bargaining__bet">
+                                                <div class="bargaining__accept-label">Текущее лучшее предложение 11 рублей</div>
+                                                <div class="bargaining__accept-tools">
+                                                    <div class="form-group">
+                                                        <input type="text" id="bargainingBet" class="form-control" placeholder="Цена">
+                                                        <label for="bargainingBet" class="form-label">руб / кг</label>
+                                                    </div>
+                                                    <a href="" class="bargaining__accept-save btn btn-green">Сделать ставку</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion__item provider__row--closed">
+                                        <h2 class="accordion__title product-item__row">
+                                            <div class="product-item__column product-item__column--name">
+                                                <div class="product-item__content">
+                                                    <div class="product-item__product">
+                                                        <div class="product-item__product-image"><img src="../img/market/stirp/stirp-2.png" alt=""></div>
+                                                        <div class="product-item__product-name">Картофель молодой, Россия</div>
+                                                    </div>
+                                                    <div class="product-item__category">
+                                                        <div class="product-item__category-name">Второй сорт</div>
+                                                        <div class="product-item__category-icon"><i class="icon-2"></i></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-item__column product-item__column--size">Калибр 56-72 мм</div>
+                                            <div class="product-item__column product-item__column--quantum">Квант 15 кг</div>
+                                            <div class="product-item__column product-item__column--weight">
+                                                500 000 кг
+                                                <div class="messages__person-notification messages__person-notification--viewed">123</div>
+                                            </div>
+                                        </h2>
+                                        <div class="accordion__text">
+                                            <table class="application-card__table table">
+                                                <tbody>
+                                                    <tr class="application-card__row table__row">
+                                                        <td class="table__column application-card__column--rating">
+                                                            <i class="icon-star"></i>
+                                                            <span>4.2</span>
+                                                        </td>
+                                                        <td class="table__column application-card__column--name">
+                                                            <a href="" class="person">
+                                                                <div class="person__rating">
+                                                                    <i class="icon-star-rating"></i>
+                                                                    <span>4.2</span>
+                                                                </div>
+                                                                <div class="person__name bargaining__name">Рамиль Саидов</div>
+                                                            </a>
+                                                        </td>
+                                                        <td class="table__column application-card__column--company">ООО “ЮЭФСИЙ”</td>
+                                                        <td class="table__column application-card__column--location">
+                                                            <div class="product-item__location">
+                                                                <i class="icon-map-marker"></i>
+                                                                <span>Санкт-Петербург</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="table__column application-card__column--lot">Лот №3 от 06.12.20,19:22</td>
+                                                        <td class="table__column application-card__column--label">
+                                                            <div class="product-item__category applications__status--best">
+                                                                <div class="product-item__category-name">Лучшая предложение</div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="table__column application-card__column--price">11 руб</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="accordion__item">
+                                        <h2 class="accordion__title product-item__row">
+                                            <div class="product-item__column product-item__column--name">
+                                                <div class="product-item__content">
+                                                    <div class="product-item__product">
+                                                        <div class="product-item__product-image"><img src="../img/market/stirp/stirp-3.png" alt=""></div>
+                                                        <div class="product-item__product-name">Картофель молодой, Россия</div>
+                                                    </div>
+                                                    <div class="product-item__category">
+                                                        <div class="product-item__category-name">Первый сорт</div>
+                                                        <div class="product-item__category-icon"><i class="icon-1"></i></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-item__column product-item__column--size">Калибр 56-72 мм</div>
+                                            <div class="product-item__column product-item__column--quantum">Квант 15 кг</div>
+                                            <div class="product-item__column product-item__column--weight">500 000 кг</div>
+                                        </h2>
+                                        <div class="accordion__text">
+                                            <table class="application-card__table table">
+                                                <tbody>
+                                                    <tr class="application-card__row table__row">
+                                                        <td class="table__column application-card__column--rating">
+                                                            <i class="icon-star"></i>
+                                                            <span>4.2</span>
+                                                        </td>
+                                                        <td class="table__column application-card__column--name">
+                                                            <a href="" class="person">
+                                                                <div class="person__rating">
+                                                                    <i class="icon-star-rating"></i>
+                                                                    <span>4.2</span>
+                                                                </div>
+                                                                <div class="person__name bargaining__name">Рамиль Саидов</div>
+                                                            </a>
+                                                        </td>
+                                                        <td class="table__column application-card__column--company">ООО 1231 йцуй</td>
+                                                        <td class="table__column application-card__column--location">
+                                                            <div class="product-item__location">
+                                                                <i class="icon-map-marker"></i>
+                                                                <span>Санкт-Петербург</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="table__column application-card__column--lot">Лот №3 от 06.12.20,19:22</td>
+                                                        <td class="table__column application-card__column--label">
+                                                            <div class="product-item__category applications__status--best">
+                                                                <div class="product-item__category-name">Лучшая предложение</div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="table__column application-card__column--price">11 руб</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bargaining__footer">
+                                Всего 10 откликов от 4 поставщиков
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            @@include('../html-components/modals.html')
+        </main>
+
+        @@include('../html-components/_footer.html', {
+        "footerClass": "d-none"
+        })

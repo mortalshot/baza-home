@@ -1,0 +1,312 @@
+a:hover {
+    color: inherit;
+}
+
+body {
+    font-family: $fontMain;
+    font-weight: $fontWeight;
+    font-size: 16px;
+    line-height: 21px;
+    color: $Black;
+    background-color: $LGray4;
+    overflow-x: hidden;
+
+    &.lock {
+        overflow: hidden;
+    }
+}
+
+.site {
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    &__main {
+    }
+
+    &__footer {
+        margin-top: auto;
+    }
+}
+
+.container {
+    max-width: #{$size-container + px};
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @media screen and (min-width: $layoutDesktop + "px") {
+        max-width: 88%;
+    }
+    @media screen and (min-width: 992px) {
+        padding: 0 30px;
+    }
+
+    &-fluid {
+        padding: 0 20px;
+
+        @media screen and (min-width: 992px) {
+            padding: 0 30px;
+        }
+    }
+}
+
+._content {
+    @include adaptiv-font(16, 18, 14, 1);
+
+    & > * {
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+    }
+
+    h {
+        &1 {
+            font-weight: 600;
+            @include adaptiv-font(28, 36, 20, 1);
+        }
+        &2 {
+            font-weight: 600;
+            @include adaptiv-font(18, 25, 16, 1);
+        }
+        &3 {
+            font-weight: 600;
+            @include adaptiv-font(16, 21, 14, 1);
+        }
+        &4 {
+            @include adaptiv-font(16, 21, 14, 1);
+        }
+    }
+
+    p {
+        margin: 16px 0;
+    }
+
+    li {
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+    }
+
+    ol {
+        counter-reset: item;
+
+        li {
+            position: relative;
+            @include adaptiv-value("padding-left", 40, 24, 1);
+            list-style-type: none;
+
+            &::before {
+                content: counter(item) ".0 ";
+                counter-increment: item;
+                position: absolute;
+                left: 0;
+                font-size: 14px;
+            }
+
+            & > ol {
+                counter-reset: subitem;
+
+                li {
+                    &::before {
+                        content: counter(item) "." counters(subitem, ".") " ";
+                        counter-increment: subitem;
+                    }
+                }
+            }
+        }
+
+        ol {
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    .table {
+        overflow-x: auto;
+        scrollbar-width: thin;
+        @include adaptiv-value("margin-top", 30, 15, 1);
+        @include adaptiv-value("margin-bottom", 30, 15, 1);
+
+        &::-webkit-scrollbar {
+            height: 5px;
+        }
+        &::-webkit-scrollbar-track {
+            background-color: #909090;
+            border-radius: 3px;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 3px;
+            background-color: #363636;
+        }
+    }
+
+    table {
+        width: 100%;
+
+        tr {
+            border-bottom: 1px solid $LGray3;
+        }
+
+        th,
+        td {
+            min-width: 120px;
+        }
+
+        th {
+            padding: 0 0 13px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 18px;
+            color: $DGray;
+
+            @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+                font-size: calc(12px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+                line-height: calc(18 / 14);
+            }
+        }
+
+        td {
+            font-size: 16px;
+            line-height: 21px;
+            color: $Black;
+            padding: 10px 0;
+        }
+    }
+
+    figure {
+        @include adaptiv-value("margin-top", 30, 20, 1);
+        @include adaptiv-value("margin-bottom", 30, 20, 1);
+    }
+
+    figcaption {
+        font-size: 12px;
+        line-height: 18px;
+        color: $Gray;
+        margin-top: 6px;
+    }
+
+    :first-child {
+        margin-top: 0;
+    }
+    :last-child {
+        margin-bottom: 0;
+    }
+}
+
+.row {
+    display: flex;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.text-link {
+    font-weight: 500;
+    color: $GreenM;
+    position: relative;
+    transition: 0.3s ease opacity 0s;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        border-bottom: 2px dashed $Green;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translate(0, 100%);
+        transition: 0.3s ease opacity 0s;
+    }
+
+    @media screen and (min-width: 992px) {
+        &:hover {
+            opacity: 0.6;
+
+            &::before {
+                opacity: 0.6;
+            }
+        }
+    }
+}
+
+.link-dashed {
+    position: relative;
+    transition: 0.3s ease color 0s;
+
+    @media screen and (min-width: 992px) {
+        &:hover {
+            color: $Blue;
+
+            &::after {
+                border-bottom-color: $Blue;
+            }
+        }
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        border-bottom: 1px dashed $Black;
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        transition: 0.3s ease border-color 0s;
+    }
+}
+
+.copy-link {
+    i {
+        font-size: 18px;
+        margin-left: 6px;
+        color: $Gray;
+    }
+}
+
+.table {
+    td,
+    th {
+        padding: 0;
+        border-top: 0;
+    }
+}
+
+.slick-slider {
+    position: relative;
+
+    .slick-arrow {
+        background-color: transparent;
+        font-size: 28px;
+        display: inline-flex;
+        color: rgba($color: $White, $alpha: 0.5);
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+
+        &:focus {
+            outline: 0;
+        }
+    }
+
+    .slick-prev {
+        left: 0;
+        z-index: 1;
+    }
+
+    .slick-next {
+        right: 0;
+    }
+}
+
+.disabled {
+    opacity: 0.6;
+    pointer-events: none !important;
+}

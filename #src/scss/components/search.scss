@@ -1,0 +1,48 @@
+.search {
+    position: relative;
+
+    input {
+        width: 100%;
+        padding: 14px 18px;
+        border-radius: 3px;
+        background-color: $White;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        color: $Gray3;
+
+        &::placeholder {
+            transition: 0.3s ease all 0s;
+        }
+
+        &:focus {
+            &::placeholder {
+                opacity: 0;
+            }
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        color: $Gray;
+        padding: 0 18px;
+        font-size: 14px;
+        transition: 0.3s ease color 0s;
+
+        @media screen and (min-width: 992px) {
+            &:hover {
+                color: rgba($color: $Gray, $alpha: 0.6);
+            }
+        }
+
+        &:focus {
+            outline: 0;
+        }
+    }
+}

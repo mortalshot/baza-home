@@ -1,0 +1,23 @@
+.thesis {
+    @include adaptiv-value("margin-top", 20, 10, 1);
+    @include adaptiv-value("margin-bottom", 20, 10, 1);
+
+    &__content {
+        padding-left: 20px;
+        position: relative;
+
+        &::before {
+            content: "";
+            display: block;
+            height: 100%;
+            width: 4px;
+            background: $GreenM;
+            position: absolute;
+            left: 0;
+        }
+
+        strong {
+            font-weight: 500;
+        }
+    }
+}

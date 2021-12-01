@@ -1,0 +1,613 @@
+@@include('../html-components/_header-old.html', {
+"title": "Рынок продуктов",
+"draverClass": "drawer-on drawer-closed drawer-deliveries",
+})
+
+<main class="site__main">
+    <section class="deliveries applications base">
+        <div class="base__container container">
+            <div class="base__heading applications__heading">
+                <div class="base__title">
+                    <h1 class="deliveries__title title-market">Мои поставки</h1>
+                </div>
+            </div>
+            <div class="base__content">
+                <div class="deliveries__tabs">
+                    <ul class="nav nav-tabs" id="deliveriesTabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="deliveriesTab-1" data-toggle="tab" data-value="Поставки" href="#deliveriesTabLink-1" role="tab" aria-controls="deliveriesTabLink-1" aria-selected="true">Мои поставки</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="deliveriesTab-2" data-toggle="tab" data-value="Расчет" href="#deliveriesTabLink-2" role="tab" aria-controls="deliveriesTabLink-2" aria-selected="false">Взаиморасчеты</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="deliveriesTab-3" data-toggle="tab" data-value="Счет" href="#deliveriesTabLink-3" role="tab" aria-controls="deliveriesTabLink-3" aria-selected="false">Лицевой счёт</a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content" id="deliveriesTabsContent">
+                        <div class="tab-pane fade show active" id="deliveriesTabLink-1" role="tabpanel" aria-labelledby="deliveriesTab-1">
+                            <div class="deliveries__statistics delivery-statistics">
+                                <a href="" class="delivery-statistics__close"></a>
+                                <div class="delivery-statistics__body">
+                                    <div class="delivery-statistics__item">
+                                        <div class="delivery-statistics__icon">
+                                            <i class="icon-line-chart"></i>
+                                        </div>
+                                        <div class="delivery-statistics__content">
+                                            <div class="delivery-statistics__sum">2 544 069 руб</div>
+                                            <div class="delivery-statistics__label">Текущий месяц</div>
+                                        </div>
+                                    </div>
+                                    <div class="delivery-statistics__item">
+                                        <div class="delivery-statistics__content">
+                                            <div class="delivery-statistics__sum">544 069 руб</div>
+                                            <div class="delivery-statistics__label">Предыдущий месяц</div>
+                                        </div>
+                                    </div>
+                                    <div class="delivery-statistics__item">
+                                        <div class="delivery-statistics__content">
+                                            <div class="delivery-statistics__sum">14 538 301 руб</div>
+                                            <div class="delivery-statistics__label">Отмененные поставки</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <table class="deliveries__table applications__table table">
+                                <tbody>
+                                    <tr class="deliveries__row applications__row table__row">
+                                        <td class="table__column deliveries__column--request">
+                                            <div class="deliveries__request">
+                                                <a href="" class="deliveries__firm text-link">ООО “ОвощиФрукты”</a>&nbsp;поставка&nbsp;<a href="" class="deliveries__art text-link">№235004</a>&nbsp; от 06.12.20
+                                                <div class="applications__city">
+                                                    <i class="icon-map-marker"></i>
+                                                    <span>Санкт-Петербург</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="table__column deliveries__column--weight">60 000 кг</td>
+                                        <td class="table__column deliveries__column--price">70 000 000 руб.</td>
+                                        <td class="table__column deliveries__column--status">
+                                            <div class="applications__status applications__status--open">Открыто</div>
+                                        </td>
+                                    </tr>
+                                    <tr class="deliveries__row applications__row table__row">
+                                        <td class="table__column deliveries__column--request">
+                                            <div class="deliveries__request">
+                                                <a href="" class="deliveries__firm text-link">ООО “ИнжирныеТехнологии”</a> &nbsp; поставка &nbsp;<a href="" class="deliveries__art text-link">№2350043</a>&nbsp; от 06.12.20
+                                                <div class="applications__city">
+                                                    <i class="icon-map-marker"></i>
+                                                    <span>Москва</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="table__column deliveries__column--weight">60 000 кг</td>
+                                        <td class="table__column deliveries__column--price">70 000 000 руб.</td>
+                                        <td class="table__column deliveries__column--status">
+                                            <div class="applications__status applications__status--agreement">Собрано</div>
+                                        </td>
+                                    </tr>
+                                    <tr class="deliveries__row applications__row table__row">
+                                        <td class="table__column deliveries__column--request">
+                                            <div class="deliveries__request">
+                                                <a href="" class="deliveries__firm text-link">ИП Кроузер С.А.</a>&nbsp; поставка &nbsp;<a href="" class="deliveries__art text-link">№223254212</a>&nbsp; от 06.12.20
+                                                <div class="applications__city">
+                                                    <i class="icon-map-marker"></i>
+                                                    <span>Екатеринбург</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="table__column deliveries__column--weight">1.5 т</td>
+                                        <td class="table__column deliveries__column--price">70 000 000 руб.</td>
+                                        <td class="table__column deliveries__column--status">
+                                            <div class="applications__status applications__status--confirmed">Подтверждено</div>
+                                        </td>
+                                    </tr>
+                                    <tr class="deliveries__row applications__row table__row">
+                                        <td class="table__column deliveries__column--request">
+                                            <div class="deliveries__request">
+                                                <a href="" class="deliveries__firm text-link">ООО “Фрутвиллл”</a>&nbsp; поставка &nbsp;<a href="" class="deliveries__art text-link">№3460041</a>&nbsp; от 06.12.20
+                                                <div class="applications__city">
+                                                    <i class="icon-map-marker"></i>
+                                                    <span>Санкт-Петербург</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="table__column deliveries__column--weight">900 кг</td>
+                                        <td class="table__column deliveries__column--price">70 000 000 руб.</td>
+                                        <td class="table__column deliveries__column--status">
+                                            <div class="applications__status applications__status--closed">Завершено</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="deliveriesTabLink-2" role="tabpanel" aria-labelledby="deliveriesTab-2">
+                            <div class="deliveries__statistics delivery-statistics">
+                                <a href="" class="delivery-statistics__close"></a>
+                                <div class="delivery-statistics__body">
+                                    <div class="delivery-statistics__item">
+                                        <div class="delivery-statistics__icon">
+                                            <i class="icon-line-chart"></i>
+                                        </div>
+                                        <div class="delivery-statistics__content">
+                                            <div class="delivery-statistics__sum">200 544 069 руб</div>
+                                            <div class="delivery-statistics__label">Поставлено товара</div>
+                                        </div>
+                                    </div>
+                                    <div class="delivery-statistics__item">
+                                        <div class="delivery-statistics__content">
+                                            <div class="delivery-statistics__sum">24 538 301 руб</div>
+                                            <div class="delivery-statistics__label">Оплачено</div>
+                                        </div>
+                                    </div>
+                                    <div class="delivery-statistics__item">
+                                        <div class="delivery-statistics__content">
+                                            <div class="delivery-statistics__sum">56 000 000 руб</div>
+                                            <div class="delivery-statistics__label">Баланс</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <table class="deliveries__table deliveries__settlements table">
+                                <thead>
+                                    <tr class="deliveries__row table__row">
+                                        <th class="table__column deliveries__column--plus"></th>
+                                        <th class="table__column deliveries__column--name"></th>
+                                        <th class="table__column deliveries__column--date"></th>
+                                        <th class="table__column deliveries__column--delivered">Поставлено</th>
+                                        <th class="table__column deliveries__column--paid">Оплачено</th>
+                                        <th class="table__column deliveries__column--purse">Баланс</th>
+                                        <th class="table__column deliveries__column--status"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="deliveries__row table__row">
+                                        <td class="table__column deliveries__column--plus">
+                                            <a href="#deliveriesDocuments" class="deliveries__documents-link popup-link">
+                                                <i class="icon-plus"></i>
+                                                <span>6</span>
+                                            </a>
+                                        </td>
+                                        <td class="table__column deliveries__column--name"><a href="" class="text-link">ООО “ОвощиФрукты”</a>&nbsp;поставка&nbsp;<a href="" class="text-link">№235004</a>&nbsp;от 06.12.20 </td>
+                                        <td class="table__column deliveries__column--date">Оплата 06.02.21 осталось 20 дн</td>
+                                        <td class="table__column deliveries__column--delivered">
+                                            <div class="deliveries__table-label">Поставлено</div>
+                                            <span>60 000 000 руб</span>
+                                        </td>
+                                        <td class="table__column deliveries__column--paid">
+                                            <div class="deliveries__table-label">Оплачено</div>
+                                            <span>20 000 000 руб</span>
+                                        </td>
+                                        <td class="table__column deliveries__column--purse">
+                                            <div class="deliveries__table-label">Баланс</div>
+                                            <span>40 000 000 руб</span>
+                                        </td>
+                                        <td class="table__column deliveries__column--status">
+                                            <div class="applications__status applications__status--collected">Доставка</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="deliveriesTabLink-3" role="tabpanel" aria-labelledby="deliveriesTab-3">
+                            <div class="bank-book">
+                                <div class="bank-book__left">
+                                    <div class="bank-book__balance-wrapper">
+                                        <div class="bank-book__balance">
+                                            <div class="bank-book__balance-icon">
+                                                <i class="icon-wallet"></i>
+                                            </div>
+                                            <div class="bank-book__text">
+                                                <div class="bank-book__score">2 544 069 руб</div>
+                                                <div class="bank-book__label">Баланс</div>
+                                            </div>
+                                        </div>
+                                        <div class="bank-book__actions">
+                                            <a href="#fillUpPurse" class="bank-book__btn btn btn-green popup-link">
+                                                <i class="icon-purse"></i>
+                                                <span>Пополнить</span>
+                                            </a>
+                                            <a href="#withdrawPurse" class="bank-book__btn btn btn-green popup-link">
+                                                <i class="icon-down-circle"></i>
+                                                <span>Вывести</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <table class="bank-book__table table">
+                                        <tbody>
+                                            <tr class="table__row">
+                                                <td class="table__column bank-book__sum bank-book__sum--green">+ 82 938 руб</td>
+                                                <td class="table__column bank-book__cashback"></td>
+                                                <td class="table__column bank-book__card"><span>0811</span></td>
+                                                <td class="table__column bank-book__descr">Пополнение с банковской карты</td>
+                                                <td class="table__column bank-book__date">06.12.20</td>
+                                            </tr>
+                                            <tr class="table__row">
+                                                <td class="table__column bank-book__sum">- 134 938 руб</td>
+                                                <td class="table__column bank-book__cashback"><span>+89</span></td>
+                                                <td class="table__column bank-book__card"></td>
+                                                <td class="table__column bank-book__descr">Оплата поставки&nbsp;<a href="" class="text-link">№235004</a></td>
+                                                <td class="table__column bank-book__date">06.12.20</td>
+                                            </tr>
+                                            <tr class="table__row">
+                                                <td class="table__column bank-book__sum">- 13 938 руб</td>
+                                                <td class="table__column bank-book__cashback"><span>+11</span></td>
+                                                <td class="table__column bank-book__card"></td>
+                                                <td class="table__column bank-book__descr">Пополнение бонусами</td>
+                                                <td class="table__column bank-book__date">06.12.20</td>
+                                            </tr>
+                                            <tr class="table__row">
+                                                <td class="table__column bank-book__sum">- 2 134 938 руб</td>
+                                                <td class="table__column bank-book__cashback"><span>+152</span></td>
+                                                <td class="table__column bank-book__card"></td>
+                                                <td class="table__column bank-book__descr">Оплата поставки&nbsp;<a href="" class="text-link">№235004</a></td>
+                                                <td class="table__column bank-book__date">06.12.20</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="bank-book__right">
+                                    <div class="bank-book__bonus" data-da="bank-book__left, 1, 991">
+                                        <div class="bank-book__bonus-top">
+                                            <div class="bank-book__balance-wrapper">
+                                                <div class="bank-book__balance">
+                                                    <div class="bank-book__balance-icon">
+                                                        <i class="icon-coins"></i>
+                                                    </div>
+                                                    <div class="bank-book__text">
+                                                        <div class="bank-book__score">8 900</div>
+                                                        <div class="bank-book__label">Мои бонусы</div>
+                                                    </div>
+                                                </div>
+                                                <div class="bank-book__actions">
+                                                    <a href="" class="bank-book__exchange text-link">
+                                                        <i class="icon-exchange"></i>
+                                                        <span>Перевести</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bank-book__bonus-bottom">
+                                            <div class="bank-book__bonus-note">
+                                                Вы можете перевести бонусы на лицевой счёт, они будут зачислены как обычные деньги и ими можно будет оплачивать заказы. Бонусы переводятся на счёт в течении 24 часов!
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="deliveriesDocuments" class="popup deliveries-documents">
+            <div class="popup__body">
+                <div class="popup__content">
+                    <div class="deliveries-documents__wrapper">
+                        <a href="" class="popup__close close-popup">
+                            <svg width="18" height="18" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.239502" y="2.31989" width="2.2461" height="23.2097" transform="rotate(-45 0.239502 2.31989)" fill="#C4C4C4" />
+                                <rect width="2.2461" height="23.2097" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 18.2395 2.31989)" fill="#C4C4C4" />
+                            </svg>
+                        </a>
+                        <div class="deliveries-documents__content">
+                            <div class="deliveries-documents__item deliveries-documents__item--accept">
+                                <div class="deliveries-documents__label">Согласование</div>
+                                <a href="" class="deliveries-documents__link">Договор поставки №1020303 от 10.02.2021</a>
+                            </div>
+                            <div class="deliveries-documents__item deliveries-documents__item--accept">
+                                <div class="deliveries-documents__label">Предоплата</div>
+                                <a href="" class="deliveries-documents__link">Счет №2034-120 от 11.02.2021</a>
+                            </div>
+                            <div class="deliveries-documents__item deliveries-documents__item--accept">
+                                <div class="deliveries-documents__label">Собран</div>
+                                <a href="" class="deliveries-documents__link">Товарная накладная №132 от 20.02.2021</a>
+                            </div>
+                            <div class="deliveries-documents__item">
+                                <div class="deliveries-documents__label">Доставка</div>
+                            </div>
+                            <div class="deliveries-documents__item">
+                                <div class="deliveries-documents__label">Приемка-передача</div>
+                            </div>
+                            <div class="deliveries-documents__item">
+                                <div class="deliveries-documents__label">Оплата</div>
+                            </div>
+                        </div>
+                        <div class="add-application__add">
+                            <a href="#deliveriesDocumentsAdd" class="popup-link add-application__add-btn"><i class="icon-plus2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="deliveriesDocumentsAdd" class="popup deliveries-documents">
+            <div class="popup__body">
+                <div class="popup__content">
+                    <form action="" class="deliveries-documents__wrapper">
+                        <div class="deliveries-documents__heading">
+                            <div class="deliveries-documents__title">
+                                <a href="#deliveriesDocuments" class="base__back popup-link"><i class="icon-chevron-left"></i></a>
+                                <span>
+                                    Добавление документов
+                                </span>
+                            </div>
+                            <a href="" class="popup__close close-popup">
+                                <svg width="18" height="18" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0.239502" y="2.31989" width="2.2461" height="23.2097" transform="rotate(-45 0.239502 2.31989)" fill="#C4C4C4" />
+                                    <rect width="2.2461" height="23.2097" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 18.2395 2.31989)" fill="#C4C4C4" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="deliveries-documents__content">
+                            <div id="deliveriesDocumentsAddAccordion" class="accordion accordion-one">
+                                <div class="accordion__item">
+                                    <h2 class="accordion__title">Согласование</h2>
+                                    <div class="accordion__text">
+                                        <a href="" class="deliveries-documents__download">
+                                            <i class="icon-plus2"></i>
+                                            <span>Загрузить документ</span>
+                                        </a>
+                                        <div class="deliveries-documents__documents">
+                                            <a href="" class="deliveries-documents__document">Спецификация по заказу №233223.pdf</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion__item">
+                                    <h2 class="accordion__title">Приемка-передача</h2>
+                                    <div class="accordion__text">
+                                        <a href="" class="deliveries-documents__download">
+                                            <i class="icon-plus2"></i>
+                                            <span>Загрузить документ</span>
+                                        </a>
+                                        <div class="deliveries-documents__documents">
+                                            <a href="" class="deliveries-documents__document">Спецификация по заказу №233223.pdf</a>
+                                            <a href="" class="deliveries-documents__document">Спецификация по заказу №233223.jpg</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion__item">
+                                    <h2 class="accordion__title">Оплата</h2>
+                                    <div class="accordion__text">
+                                        <a href="" class="deliveries-documents__download">
+                                            <i class="icon-plus2"></i>
+                                            <span>Загрузить документ</span>
+                                        </a>
+                                        <div class="deliveries-documents__documents">
+                                            <a href="" class="deliveries-documents__document">Спецификация по заказу №233223.pdf</a>
+                                            <a href="" class="deliveries-documents__document">skan.jpg</a>
+                                        </div>
+
+                                        <div class="form-row mt-4 pb-2">
+                                            <div class="form-group form-group--calendar col-6">
+                                                <input type="date" class="form-control form-control--calendar" id="deliveriesDocumentsPaidData" placeholder="Дата">
+                                                <span><i class="icon-calendar"></i></span>
+                                            </div>
+                                            <div class="form-group col-6">
+                                                <input type="text" class="form-control" id="deliveriesDocumentsPaidSum" placeholder="Сумма">
+                                                <label class="form-label" for="deliveriesDocumentsPaidSum">руб</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="deliveries-documents__btn btn btn-green">Сохранить изменения</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="fillUpPurse" class="popup popup-purse">
+            <div class="popup__body">
+                <div class="popup__content">
+                    <form action="">
+                        <div class="popup-purse__top">
+                            <a href="" class="popup__close close-popup">
+                                <svg width="18" height="18" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0.239502" y="2.31989" width="2.2461" height="23.2097" transform="rotate(-45 0.239502 2.31989)" fill="#C4C4C4" />
+                                    <rect width="2.2461" height="23.2097" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 18.2395 2.31989)" fill="#C4C4C4" />
+                                </svg>
+                            </a>
+                            <h2 class="popup-purse__title title-market">
+                                <i class="icon-purse"></i>
+                                <span>Пополнение средств</span>
+                            </h2>
+                            <div class="form-group">
+                                <label class="form-label" for="fillUpPurseInput">Введите сумму</label>
+                                <div class="form-item col-sm-5">
+                                    <input type="text" class="form-control" id="fillUpPurseInput" placeholder="1000">
+                                    <span>₽</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="popup-purse__body">
+                            <h3 class="popup-purse__body-title">Данные компании</h3>
+
+                            <div class="popup-purse__options options">
+                                <div class="options__item">
+                                    <input id="fillUpCompanyProps" checked type="radio" value="Fill up company props" name="Fill up props" class="options__input">
+                                    <label for="fillUpCompanyProps" class="options__label"><span>Использовать реквизиты ООО "Юнайтед Фрут Компани"</span></label>
+                                </div>
+                                <div class="options__item">
+                                    <input id="fillUpNewProps" type="radio" value="Fill up new props" name="Fill up props" class="options__input">
+                                    <label for="fillUpNewProps" class="options__label"><span>Ввести новые реквизиты</span></label>
+                                </div>
+                            </div>
+
+                            <div class="popup-purse__wrapper">
+                                <div class="form-row">
+                                    <div class="form-group col-12">
+                                        <label for="companyFullName" class="form-label">Полное наименование</label>
+                                        <input type="text" class="form-control" id="companyFullName" placeholder='Общество с ограниченной ответственностью "Юнайтед Фрут Компани"'>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-sm-5">
+                                        <label for="companyPublicName" class="form-label">Публичное наименование</label>
+                                        <input type="text" class="form-control" id="companyPublicName" placeholder='ООО "ЮФК"'>
+                                    </div>
+                                    <div class="form-group col-sm-7">
+                                        <label for="companyCEO" class="form-label">Генеральный директор</label>
+                                        <input type="text" class="form-control" id="companyCEO" placeholder="Бабиров Захид Закир оглы">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-sm-4">
+                                        <label for="companyOGRN" class="form-label">ОГРН</label>
+                                        <input type="text" class="form-control" id="companyOGRN" placeholder="1187847052007">
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                        <label for="companyINN" class="form-label">ИНН</label>
+                                        <input type="text" class="form-control" id="companyINN" placeholder="7816658485">
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                        <label for="companyCPP" class="form-label">КПП</label>
+                                        <input type="text" class="form-control" id="companyCPP" placeholder="7816010001">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-sm-12 col-md-12 col-lg-5">
+                                        <label for="companyBankName" class="form-label">Наименование банка</label>
+                                        <input type="text" class="form-control" id="companyBankName" placeholder='Ф. АКБ "ФОРА-БАНК" АО'>
+                                    </div>
+                                    <div class="form-group col-sm-5 col-md-5 col-lg-3">
+                                        <label for="companyBIK" class="form-label">БИК</label>
+                                        <input type="text" class="form-control" id="companyBIK" placeholder="044030831">
+                                    </div>
+                                    <div class="form-group col-sm-7 col-md-7 col-lg-4">
+                                        <label for="companyPayment" class="form-label">Расчетный счет</label>
+                                        <input type="text" class="form-control" id="companyPayment" placeholder="40702810300060000173">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-12">
+                                        <label for="companyLegalAddress" class="form-label">Юридический адрес</label>
+                                        <input type="text" class="form-control" id="companyLegalAddress" placeholder="192007, Санкт-Петербург, ул. Тамбовская, д. 33, лит.А, пом. 2-Н ">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="popup-purse__btn btn btn-green">Запросить счёт</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="withdrawPurse" class="popup popup-purse">
+            <div class="popup__body">
+                <div class="popup__content">
+                    <form action="">
+                        <div class="popup-purse__top">
+                            <a href="" class="popup__close close-popup">
+                                <svg width="18" height="18" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0.239502" y="2.31989" width="2.2461" height="23.2097" transform="rotate(-45 0.239502 2.31989)" fill="#C4C4C4" />
+                                    <rect width="2.2461" height="23.2097" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 18.2395 2.31989)" fill="#C4C4C4" />
+                                </svg>
+                            </a>
+                            <h2 class="popup-purse__title title-market">
+                                <i class="icon-down-circle"></i>
+                                <span>Вывести</span>
+                            </h2>
+                            <div class="form-group">
+                                <label class="form-label" for="withdrawPurseInput">Введите сумму</label>
+                                <div class="form-item col-sm-5">
+                                    <input type="text" class="form-control" id="withdrawPurseInput" placeholder="1000">
+                                    <span>₽</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="popup-purse__body">
+                            <h3 class="popup-purse__body-title">Данные компании</h3>
+
+                            <div class="popup-purse__options options">
+                                <div class="options__item">
+                                    <input id="withdrawCompanyProps" checked type="radio" value="Withdraw company props" name="Withdraw props" class="options__input">
+                                    <label for="withdrawCompanyProps" class="options__label"><span>Использовать реквизиты ООО "Юнайтед Фрут Компани"</span></label>
+                                </div>
+                                <div class="options__item">
+                                    <input id="withdrawNewProps" type="radio" value="Withdraw new props" name="Withdraw props" class="options__input">
+                                    <label for="withdrawNewProps" class="options__label"><span>Ввести новые реквизиты</span></label>
+                                </div>
+                            </div>
+
+                            <div class="popup-purse__wrapper">
+                                <div class="form-row">
+                                    <div class="form-group col-12">
+                                        <label for="companyFullName" class="form-label">Полное наименование</label>
+                                        <input type="text" class="form-control" id="companyFullName" placeholder='Общество с ограниченной ответственностью "Юнайтед Фрут Компани"'>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-sm-5">
+                                        <label for="companyPublicName" class="form-label">Публичное наименование</label>
+                                        <input type="text" class="form-control" id="companyPublicName" placeholder='ООО "ЮФК"'>
+                                    </div>
+                                    <div class="form-group col-sm-7">
+                                        <label for="companyCEO" class="form-label">Генеральный директор</label>
+                                        <input type="text" class="form-control" id="companyCEO" placeholder="Бабиров Захид Закир оглы">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-sm-4">
+                                        <label for="companyOGRN" class="form-label">ОГРН</label>
+                                        <input type="text" class="form-control" id="companyOGRN" placeholder="1187847052007">
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                        <label for="companyINN" class="form-label">ИНН</label>
+                                        <input type="text" class="form-control" id="companyINN" placeholder="7816658485">
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                        <label for="companyCPP" class="form-label">КПП</label>
+                                        <input type="text" class="form-control" id="companyCPP" placeholder="7816010001">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-sm-12 col-md-12 col-lg-5">
+                                        <label for="companyBankName" class="form-label">Наименование банка</label>
+                                        <input type="text" class="form-control" id="companyBankName" placeholder='Ф. АКБ "ФОРА-БАНК" АО'>
+                                    </div>
+                                    <div class="form-group col-sm-5 col-md-5 col-lg-3">
+                                        <label for="companyBIK" class="form-label">БИК</label>
+                                        <input type="text" class="form-control" id="companyBIK" placeholder="044030831">
+                                    </div>
+                                    <div class="form-group col-sm-7 col-md-7 col-lg-4">
+                                        <label for="companyPayment" class="form-label">Расчетный счет</label>
+                                        <input type="text" class="form-control" id="companyPayment" placeholder="40702810300060000173">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group col-12">
+                                        <label for="companyLegalAddress" class="form-label">Юридический адрес</label>
+                                        <input type="text" class="form-control" id="companyLegalAddress" placeholder="192007, Санкт-Петербург, ул. Тамбовская, д. 33, лит.А, пом. 2-Н ">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="popup-purse__btn btn btn-green">Вывести</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    @@include('../html-components/modals.html')
+</main>
+
+@@include('../html-components/_footer.html', {
+"footerClass": "d-none"
+})

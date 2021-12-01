@@ -1,0 +1,287 @@
+.application {
+    &__heading {
+        align-items: center;
+
+        @media screen and (max-width: 575px) {
+            flex-direction: column;
+            align-items: baseline;
+        }
+
+        .base__title {
+            padding-right: 15px;
+
+            @media screen and (max-width: 991px) {
+                flex-direction: column;
+                align-items: baseline;
+            }
+
+            @media screen and (max-width: 575px) {
+                margin-bottom: 10px;
+                width: 100%;
+                padding-right: 0;
+            }
+        }
+
+        .base__back {
+            @media screen and (max-width: 991px) {
+                margin-bottom: 15px;
+            }
+        }
+
+        .title-market {
+            @include adaptiv-value("margin-right", 27, 15, 1);
+
+            @media screen and (max-width: 991px) {
+                margin-bottom: 15px;
+                margin-right: 0;
+            }
+        }
+    }
+    &__status {
+        @include adaptiv-value("margin-right", 27, 15, 1);
+        white-space: nowrap;
+
+        @media screen and (max-width: 450px) {
+            flex: 0 0 100%;
+            margin: 0px 0px 10px 0px;
+        }
+    }
+
+    .applications__view {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+
+        @media screen and (min-width: $layoutDesktop + "px") {
+            font-size: calc(10px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(15 / 12);
+        }
+        @media screen and (max-width: 450px) {
+            margin: 0px 0px 10px 0px;
+        }
+
+        i {
+            margin-right: 7px;
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+
+        @media screen and (max-width: 991px) {
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        @media screen and (max-width: 575px) {
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+        }
+    }
+
+    &__time {
+        display: flex;
+        align-items: center;
+        @include adaptiv-value("margin-right", 75, 15, 1);
+        width: 100%;
+
+        @media screen and (max-width: 991px) {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+        @media screen and (max-width: 575px) {
+            margin-bottom: 0;
+            padding-right: 15px;
+        }
+    }
+
+    &__time-timer {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 21px;
+        margin-right: 13px;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(14px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(21 / 16);
+        }
+    }
+
+    &__time-label {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        white-space: nowrap;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(12px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(18 / 14);
+        }
+    }
+
+    &__tools {
+        display: flex;
+        align-items: center;
+
+        @media screen and (max-width: 575px) {
+            width: 100%;
+            justify-content: flex-end;
+        }
+
+        a {
+            color: $Gray;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            @include adaptiv-value("margin-right", 21, 10, 1);
+            transition: 0.3s ease color 0s;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            @media screen and (min-width: 992px) {
+                &:hover {
+                    color: rgba($color: $Gray, $alpha: 0.6);
+                }
+            }
+
+            i {
+                display: inline-flex;
+            }
+        }
+    }
+
+    &__responses-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include adaptiv-value("margin-top", 30, 32, 1);
+        @include adaptiv-value("margin-bottom", 36, 15, 1);
+
+        @media screen and (max-width: 450px) {
+            flex-direction: column;
+            align-items: baseline;
+        }
+
+        .title-market {
+            font-weight: 400;
+        }
+
+        .catalog-sorting__item {
+            @media screen and (max-width: 450px) {
+                margin-right: 30px;
+            }
+        }
+    }
+
+    &__responses-heading-left {
+        @media screen and (max-width: 450px) {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__responses-heading-right {
+        display: flex;
+        align-items: center;
+    }
+
+    &__response-output {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        color: $DGray;
+        text-decoration: underline;
+    }
+
+    &__responses-list {
+        .cart {
+            &__company,
+            &__tax {
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 15px;
+
+                @media screen and (min-width: $layoutDesktop + "px") {
+                    font-size: calc(10px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+                    line-height: calc(15 / 12);
+                }
+            }
+
+            &__tax {
+                flex: 1 1 auto;
+            }
+
+            &__date {
+                padding-right: 20px;
+            }
+        }
+    }
+
+    &__response {
+        background-color: $White;
+        border-radius: 3px;
+        @include adaptiv-value("margin-bottom", 30, 24, 1);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .checkbox {
+            display: flex;
+            width: 18px;
+            height: 18px;
+
+            &__input {
+                &:checked {
+                    & + .checkbox__label::before {
+                        background-color: $LGray3;
+                    }
+                }
+            }
+
+            &__label {
+                padding: 0;
+                width: 18px;
+                height: 18px;
+                flex: 0 0 18px;
+
+                &::before {
+                    width: 18px;
+                    height: 18px;
+                    background-color: $LGray3;
+                }
+                &::after {
+                    width: 13px;
+                    height: 10px;
+                    left: 3px;
+                    background: url(../img/icons/check-gray.svg) no-repeat center/cover;
+                }
+            }
+        }
+    }
+
+    &-response__user {
+        color: $DGray;
+    }
+
+    .application-title {
+        @media screen and (max-width: 575px) {
+            width: 100%;
+        }
+
+        .application__title {
+            @media screen and (max-width: 575px) {
+                width: 100%;
+            }
+        }
+
+        .application__tools {
+            @media screen and (max-width: 575px) {
+                width: initial;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}

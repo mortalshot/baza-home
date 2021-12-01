@@ -1,0 +1,286 @@
+@@include('../html-components/_header-old.html', {
+"title": "Рынок продуктов",
+"draverClass": "drawer-on drawer-closed drawer-deliveries",
+})
+
+<main class="site__main">
+    <section class="profile-edit base">
+        <div class="base__container container">
+            <div class="profile-edit__heading base__heading">
+                <div class="base__title">
+                    <a href="" class="base__back"><i class="icon-chevron-left"></i></a>
+                    <h1 class="delivery__title title-market">Редактировать профиль</h1>
+                </div>
+            </div>
+            <div class="profile-edit__content base__content ">
+                <div class="profile-edit__tabs">
+                    <ul class="nav nav-tabs" id="profileTabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="profileTab-1" data-toggle="tab" href="#profileTabLink-1"
+                                role="tab" aria-controls="profileTabLink-1" aria-selected="true">Основное</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profileTab-2" data-toggle="tab" href="#profileTabLink-2" role="tab"
+                                aria-controls="profileTabLink-2" aria-selected="false">Организация</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profileTab-3" data-toggle="tab" href="#profileTabLink-3" role="tab"
+                                aria-controls="profileTabLink-3" aria-selected="false" data-value="Пароль">Изменить пароль</a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content" id="profileTabsContent">
+                        <div class="tab-pane fade show active" id="profileTabLink-1" role="tabpanel"
+                            aria-labelledby="profileTab-1">
+                            <form class="profile-edit__main">
+                                <div class="profile-edit__condition pb-2">
+                                    <div class="form-row">
+                                        <div class="form-group col-sm-6 col-lg-7 ">
+                                            <input type="text" class="form-control" id="profileName"
+                                                placeholder="Ваше имя: ">
+                                        </div>
+                                        <div class="form-group col-sm-6 col-lg-5 ">
+                                            <input type="text" class="form-control" id="profilePosition"
+                                                placeholder="Должность:">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-lg-5">
+                                            <select id="profileState" class="form-control form__select">
+                                                <option value="">Город</option>
+                                                <option value="Москва">Москва</option>
+                                                <option value="Новгород">Новгород</option>
+                                                <option value="Ярославль">Ярославль</option>
+                                                <option value="Тверь">Тверь</option>
+                                                <option value="Воронеж">Воронеж</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-sm-6 col-lg-5">
+                                            <input type="email" class="form-control" id="profileMail"
+                                                placeholder="Email">
+                                        </div>
+                                        <div class="form-group col-sm-6 col-lg-5">
+                                            <input type="text" class="form-control form-control--phone"
+                                                id="profilePhone" placeholder="Телефон">
+                                            <label for="profilePhone" class="form-label"><i
+                                                    class="icon-phone"></i></label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="profile-edit__condition pb-2">
+                                    <div class="order-terms__delivery-method">
+                                        <div class="nav nav-tabs" id="deliveryMethodTabs" role="tablist">
+                                            <a class="nav-item nav-link active" id="deliveryMethodTab-1"
+                                                data-toggle="tab" href="#deliveryMethodTabLink-1" role="tab"
+                                                aria-controls="deliveryMethodTabLink-1"
+                                                aria-selected="true">Доставка</a>
+                                            <a class="nav-item nav-link" id="deliveryMethodTab-2" data-toggle="tab"
+                                                href="#deliveryMethodTabLink-2" role="tab"
+                                                aria-controls="deliveryMethodTabLink-2"
+                                                aria-selected="true">Самовывоз</a>
+                                        </div>
+                                        <div class="tab-content" id="deliveryMethodTabContent">
+                                            <div class="tab-pane fade show active" id="deliveryMethodTabLink-1"
+                                                role="tabpanel" aria-labelledby="deliveryMethodTab-1">
+                                                <div class="form-row">
+                                                    <div class="form-group col-sm-6 col-lg-5">
+                                                        <select name="city" class="form__select">
+                                                            <option value="">Город</option>
+                                                            <option value="Москва">Москва</option>
+                                                            <option value="Новгород">Новгород</option>
+                                                            <option value="Ярославль">Ярославль</option>
+                                                            <option value="Тверь">Тверь</option>
+                                                            <option value="Воронеж">Воронеж</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-sm-6 col-lg-7">
+                                                        <div class="form__input--location">
+                                                            <input id="formName" type="text" name="name"
+                                                                class="form__input" placeholder="Адреc">
+                                                            <span></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="deliveryMethodTabLink-2" role="tabpanel"
+                                                aria-labelledby="deliveryMethodTab-2">
+                                                <div class="order-terms__puckup mb-2">
+                                                    <div class="order-terms__condition-title">
+                                                        <i class="icon-map-marker"></i>
+                                                        <span>Самовывоз по адресу Санкт-Петербург, ул. Большая
+                                                            Конюшенная, д. 61</span>
+                                                    </div>
+                                                    <div class="order-terms__condition-text">Приемка-передача по адресу
+                                                        продавца</div>
+                                                </div>
+                                                <a href="" class="order-terms__pickup-link mb-1">Данные для самовывоза</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="profile-edit__condition">
+                                    <div class="profile-edit__address">
+                                        Приемка-передача&nbsp;
+                                        <select name="address" class="form__select">
+                                            <option value="По адресу покупателя" selected>по адресу покупателя</option>
+                                            <option value="по адресу продавца">по адресу продавца</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="profile-edit__condition">
+                                    <div class="options">
+                                        <div class="options__item">
+                                            <input id="formPaymentCash" checked type="radio" value="cash"
+                                                name="formPayment" class="options__input">
+                                            <label for="formPaymentCash" class="options__label"><span>Наличный
+                                                    расчет</span></label>
+                                        </div>
+                                        <div class="options__item">
+                                            <input id="formPaymentCashless" type="radio" value="cashless"
+                                                name="formPayment" class="options__input">
+                                            <label for="formPaymentCashless" class="options__label"><span>Безналичный
+                                                    расчет</span></label>
+                                        </div>
+                                    </div>
+                                    <div class="order-terms__postponement">Отсрочка <a href="" class="text-link">0</a> дней</div>
+
+                                    <div class="profile-edit__buttons">
+                                        <button type="submit"
+                                            class="profile-edit__save btn btn-green">Сохранить</button>
+                                        <button type="reset" class="profile-edit__reset text-link">Отменить</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="profileTabLink-2" role="tabpanel" aria-labelledby="profileTab-2">
+                            <div class="profile-edit__condition">
+                                <form class="profile-edit__organization">
+                                    <div class="profile-edit__business">
+                                        <div class="options">
+                                            <div class="options__item">
+                                                <input id="formBusinessOOO" checked type="radio" value="OOO" name="formBusiness"
+                                                    class="options__input">
+                                                <label for="formBusinessOOO" class="options__label"><span>ООО</span></label>
+                                            </div>
+                                            <div class="options__item">
+                                                <input id="formBusinessIp" type="radio" value="Ip" name="formBusiness"
+                                                    class="options__input">
+                                                <label for="formBusinessIp" class="options__label"><span>ИП</span></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group col-12">
+                                            <label for="companyFullName" class="form-label">Полное наименование</label>
+                                            <input type="text" class="form-control" id="companyFullName" placeholder='Общество с ограниченной ответственностью "Юнайтед Фрут Компани"'>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group col-sm-5">
+                                            <label for="companyPublicName" class="form-label">Публичное наименование</label>
+                                            <input type="text" class="form-control" id="companyPublicName" placeholder='ООО "ЮФК"'>
+                                        </div>
+                                        <div class="form-group col-sm-7">
+                                            <label for="companyCEO" class="form-label">Генеральный директор</label>
+                                            <input type="text" class="form-control" id="companyCEO" placeholder="Бабиров Захид Закир оглы">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group col-sm-4">
+                                            <label for="companyOGRN" class="form-label">ОГРН</label>
+                                            <input type="text" class="form-control" id="companyOGRN" placeholder="1187847052007">
+                                        </div>
+                                        <div class="form-group col-sm-4">
+                                            <label for="companyINN" class="form-label">ИНН</label>
+                                            <input type="text" class="form-control" id="companyINN" placeholder="7816658485">
+                                        </div>
+                                        <div class="form-group col-sm-4">
+                                            <label for="companyCPP" class="form-label">КПП</label>
+                                            <input type="text" class="form-control" id="companyCPP" placeholder="7816010001">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group col-sm-12 col-md-12 col-lg-5">
+                                            <label for="companyBankName" class="form-label">Наименование банка</label>
+                                            <input type="text" class="form-control" id="companyBankName" placeholder='Ф. АКБ "ФОРА-БАНК" АО'>
+                                        </div>
+                                        <div class="form-group col-sm-5 col-md-5 col-lg-3">
+                                            <label for="companyBIK" class="form-label">БИК</label>
+                                            <input type="text" class="form-control" id="companyBIK" placeholder="044030831">
+                                        </div>
+                                        <div class="form-group col-sm-7 col-md-7 col-lg-4">
+                                            <label for="companyPayment" class="form-label">Расчетный счет</label>
+                                            <input type="text" class="form-control" id="companyPayment" placeholder="40702810300060000173">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group col-12">
+                                            <label for="companyLegalAddress" class="form-label">Юридический адрес</label>
+                                            <input type="text" class="form-control" id="companyLegalAddress" placeholder="192007, Санкт-Петербург, ул. Тамбовская, д. 33, лит.А, пом. 2-Н ">
+                                        </div>
+                                    </div>
+
+                                    <div class="profile-edit__buttons">
+                                        <button type="submit" class="profile-edit__save btn btn-green">Сохранить</button>
+                                        <button type="reset" class="profile-edit__reset text-link">Отменить</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="profileTabLink-3" role="tabpanel" aria-labelledby="profileTab-3">
+                            <div class="profile-edit__condition">
+                                <form class="profile-edit__password">
+                                    <div class="form-row">
+                                        <div class="form-group col-sm-6 col-md-5">
+                                            <input type="password" class="form-control" id="currentPassword" placeholder="Текущий пароль">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-sm-6 col-md-5">
+                                            <input type="password" class="form-control" id="newPassword1" placeholder="Новый пароль">
+                                        </div>
+                                        <div class="form-group col-sm-6 col-md-5">
+                                            <input type="password" class="form-control" id="newPassword2" placeholder="Новый пароль">
+                                        </div>
+                                    </div>
+                                    <div class="profile-edit__buttons">
+                                        <button type="submit" class="profile-edit__save btn btn-green">Сохранить</button>
+                                        <button type="reset" class="profile-edit__reset text-link">Отменить</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-edit__photo">
+                    <form class="profile-edit__img">
+                        <img src="../img/market/profile-edit-avatar.png" alt="">
+                        <input type="file">
+                    </form>
+                    <form class="profile-edit__img profile-edit__img--empty mt-4">
+                        <input type="file">
+                        <img src="../img/icons/picture-f.svg" alt="" width="31" height="30">
+                        <div class="profile-edit__img-text">Добавить фотографию</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @@include('../html-components/modals.html')
+</main>
+
+@@include('../html-components/_footer.html', {
+"footerClass": "d-none"
+})

@@ -1,0 +1,54 @@
+.title {
+    &-h1 {
+        font-weight: 800;
+        font-size: 38px;
+        line-height: 46px;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(26px + 12 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(46 / 38);
+        }
+    }
+    &-h2 {
+        font-weight: 600;
+        font-size: 54px;
+        line-height: 69px;
+        color: rgba($color: $Black, $alpha: 0.1);
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(40px + 14 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: 110%;
+        }
+    }
+    &-h3 {
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 33px;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(22px + 4 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(33 / 26);
+        }
+    }
+    &-market {
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 31px;
+        margin: 0;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(20px + 4 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(31 / 24);
+        }
+    }
+    &-h4 {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 26px;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(16px + 4 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(26 / 20);
+        }
+    }
+}

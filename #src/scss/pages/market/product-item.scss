@@ -1,0 +1,615 @@
+.product-item {
+    position: relative;
+
+    &__wrapper {
+        background: $White;
+        border-radius: 3px;
+    }
+
+    &__owner {
+        display: inline-flex;
+        text-decoration: underline;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        color: $DGray;
+        transition: 0.3s ease color 0s;
+
+        @media screen and (min-width: 992px) {
+            &:hover {
+                color: rgba($color: $DGray, $alpha: 0.6);
+            }
+        }
+    }
+
+    &__tax {
+        white-space: nowrap;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        color: $DGray;
+        text-transform: uppercase;
+    }
+
+    &__location {
+        display: flex;
+        white-space: nowrap;
+        color: $Gray;
+        font-size: 12px;
+        line-height: 15px;
+
+        span {
+            margin-right: 6px;
+            color: $DGray;
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        flex: 1 1 auto;
+    }
+
+    &__product {
+        display: flex;
+        align-items: center;
+        flex: 1 1 auto;
+    }
+
+    a.product-item__product {
+        transition: 0.3s ease opacity 0s;
+
+        @media screen and (min-width: 992px) {
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+
+    &__product-image {
+        flex: 0 0 20px;
+        width: 20px;
+        position: relative;
+        padding-bottom: 20px;
+        margin-right: 10px;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__product-name {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 23px;
+        color: $Black;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(16px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(23 / 18);
+        }
+    }
+
+    &__category {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 2px;
+        padding: 2px 5px;
+        background-color: $Orange;
+        color: $DGray;
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    &__category-name {
+        white-space: nowrap;
+        margin-right: 4px;
+    }
+
+    &__category-icon {
+        display: flex;
+        font-size: 10px;
+    }
+
+    &__price {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 23px;
+        color: $Black;
+        white-space: nowrap;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + 'px') {
+            font-size: calc(14px + 4 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(23 / 18);
+        }
+    }
+
+    &__descr {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 23px;
+        color: $DGray;
+        white-space: nowrap;
+    }
+
+    &__tax {
+        white-space: nowrap;
+    }
+
+    &__cart {
+        font-size: 22px;
+        color: $White;
+        padding: 10px;
+        background-color: $GreenM;
+        transition: 0.3s ease opacity 0s;
+
+        @media screen and (min-width: 992px) {
+            &:hover {
+                color: $White;
+                opacity: 0.6;
+            }
+        }
+    }
+
+    &__table {
+        background-color: $White;
+        overflow-y: hidden;
+        overflow-x: auto;
+        scrollbar-width: thin;
+
+        &::-webkit-scrollbar {
+            height: 5px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: #909090;
+            border-radius: 3px;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 3px;
+            background-color: #363636;
+        }
+    }
+
+    &__row {
+        display: flex;
+        flex-wrap: nowrap;
+        position: relative;
+
+        @media screen and (min-width: $layoutDesktop + "px") {
+            &:hover {
+                .product-item__cart {
+                    opacity: 1;
+                    pointer-events: auto;
+                    visibility: visible;
+                }
+
+                .product-popup {
+                    opacity: 1;
+                    visibility: visible;
+                    pointer-events: auto;
+                }
+            }
+        }
+    }
+
+    &__column {
+        padding: 0 10px;
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+        background-color: $White;
+        border-bottom: 1px solid $LGray3;
+
+        &--name {
+            flex: 0 0 40%;
+
+            @media screen and (max-width: 660px) {
+                flex: 0 0 60%;
+            }
+
+            @media screen and (max-width: 450px) {
+                flex: 0 0 85%;
+            }
+        }
+
+        &--location {
+            flex: 0 0 14%;
+
+            @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+                flex: 0 0 140px;
+            }
+        }
+
+        &--person {
+            flex: 0 0 12%;
+
+            @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+                flex: 0 0 120px;
+            }
+        }
+
+        &--tax {
+            flex: 0 0 9%;
+
+            @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+                flex: 0 0 85px;
+            }
+        }
+
+        &--price {
+            flex: 0 0 13%;
+
+            @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+                flex: 0 0 120px;
+            }
+        }
+
+        &--descr {
+            @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+                flex: 0 0 70px;
+            }
+        }
+
+        &--btn {
+            flex: 1 1 auto;
+            display: flex;
+            justify-content: flex-end;
+            padding: 0;
+        }
+    }
+}
+
+.product-popup {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(0, 100%);
+    font-size: 14px;
+    line-height: 18px;
+    color: $DGray;
+    display: flex;
+    width: 100%;
+    background-color: $LBlue;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: 0.3s ease all 0s;
+
+    @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+        font-size: calc(12px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+        line-height: calc(18 / 14);
+    }
+
+    @media screen and (max-width: 850px) {
+        flex-wrap: wrap;
+    }
+
+    &__row {
+        display: flex;
+        margin: 0 -5px 4px;
+        width: 100%;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__left {
+        flex: 0 0 43%;
+
+        @media screen and (max-width: 1250px) {
+            flex: 0 0 50%;
+        }
+
+        @media screen and (max-width: 850px) {
+            flex: 0 0 100%;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__column {
+        flex: 1 1 50%;
+        padding: 0 5px;
+    }
+
+    &__title {
+        font-weight: 500;
+    }
+
+    &__right {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+
+        .product-popup__title {
+            flex: 1 1 auto;
+        }
+    }
+}
+
+.item-popup {
+    .popup {
+        &__content {
+            max-width: 730px;
+            padding: 0;
+            border-radius: 3px;
+        }
+
+        &__close {
+            top: 11px;
+            right: 11px;
+            z-index: 1;
+
+            @media screen and (max-width: 767px) {
+                svg {
+                    path {
+                        fill: rgba($color: $White, $alpha: 0.7);
+                    }
+                }
+            }
+        }
+    }
+
+    &__row {
+        background-color: $White;
+        border-radius: 3px 3px 0 0;
+
+        @media screen and (min-width: 768px) {
+            display: flex;
+        }
+    }
+
+    &__slider-wrapper {
+        @media screen and (min-width: 768px) {
+            flex: 0 0 47%;
+            width: 47%;
+            height: 100%;
+        }
+    }
+
+    &__slider {
+        height: 100%;
+        width: 100%;
+
+        .slick-arrow {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: auto;
+            bottom: 26px;
+            left: 26px;
+            transform: translate(0);
+
+            i {
+                font-size: 10px;
+                color: $White;
+                display: inline-flex;
+            }
+        }
+
+        .slick-next {
+            left: 62px;
+            right: auto;
+        }
+
+
+        .slick-list {
+            height: 100%;
+        }
+
+        .slick-track {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__slider-image {
+        position: relative;
+
+        @media screen and (min-width: 768px) {
+            padding-bottom: 116%;
+        }
+        @media screen and (max-width: 767px) {
+            @include adaptiv-value("padding-bottom", 680, 200, 0);
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 3px 0 0 0;
+        }
+    }
+
+    &__content {
+        flex: 1 1 auto;
+        background-color: $White;
+        @include adaptiv-value("padding-top", 40, 20, 1);
+        @include adaptiv-value("padding-bottom", 35, 20, 1);
+        @include adaptiv-value("padding-left", 35, 15, 1);
+        @include adaptiv-value("padding-right", 35, 15, 1);
+        color: $Black;
+        border-radius: 0 3px 0 0;
+    }
+
+    &__name {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        color: $Gray;
+        @include adaptiv-value("margin-bottom", 28, 15, 1);
+    }
+
+    &__title {
+        @include adaptiv-value("margin-bottom", 15, 10, 1);
+        color: $Black;
+    }
+
+    .applications__view {
+        justify-content: flex-start;
+
+        i {
+            margin-right: 7px;
+            font-size: 10px;
+        }
+    }
+
+    &__table {
+        @include adaptiv-value("margin-bottom", 28, 15, 1);
+
+        tr {
+            font-size: 14px;
+            line-height: 16px;
+
+            &:last-child {
+                td {
+                    padding-bottom: 0;
+                }
+            }
+        }
+
+        td {
+            padding-bottom: 8px;
+        }
+    }
+
+    &__table-label {
+        color: $DGray;
+    }
+
+    &__location {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        color: $Black;
+        display: flex;
+        align-items: center;
+        @include adaptiv-value("margin-bottom", 28, 15, 1);
+
+        i {
+            color: $Gray;
+            font-size: 12px;
+            margin-right: 6px;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__price-wrapper {
+        flex: 1 1 auto;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 23px;
+        padding-right: 20px;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(14px + 4 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(23 / 18);
+        }
+    }
+
+    &__price {
+        font-weight: 800;
+    }
+
+    &__num {
+        font-weight: 500;
+        color: $DGray;
+    }
+
+    &__btn {
+        padding: 12px 28px;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    .providers__item-wrapper {
+        padding: 20px 30px;
+        background-color: $GreenM;
+        color: $White;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        border-radius: 0 0 3px 3px;
+
+        @media screen and (max-width: 575px) {
+            flex-direction: column;
+            align-items: baseline;
+        }
+    }
+
+    .providers__item-person {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0;
+
+        @media screen and (max-width: 575px) {
+            margin-bottom: 15px;
+        }
+        @media screen and (max-width: 450px) {
+            flex-direction: column;
+            align-items: baseline;
+        }
+    }
+
+    .cart__person {
+        @include adaptiv-value("margin-right", 66, 10, 1);
+
+        @media screen and (max-width: 450px) {
+            margin-bottom: 10px;
+        }
+    }
+
+    .cart__account {
+        margin: 0 !important;
+    }
+
+    .cart__owner-name,
+    .cart__owner-reviews {
+        color: $White;
+    }
+
+    .cart__owner-rating i.icon-star-rating--dis {
+        color: $White;
+    }
+
+    .cart__about {
+        color: rgba($color: $White, $alpha: 0.7);
+        padding: 0 20px 0 0;
+    }
+
+    .providers__item-person .cart__company {
+        margin: 0;
+    }
+
+    &__chat {
+        font-size: 16px;
+        line-height: 21px;
+        color: $White;
+        text-decoration: underline;
+        display: inline-block;
+        transition: 0.3s ease all 0s;
+    }
+}

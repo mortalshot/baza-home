@@ -1,0 +1,88 @@
+.pagination {
+    margin: 0;
+    
+    &__list {
+        background: $White;
+        display: none;
+        align-items: center;
+        padding: 8px 12px;
+        margin: 0;
+        border-radius: 3px;
+
+        &--desktop {
+            @media screen and (min-width: 661px) {
+                display: flex;
+            }
+        }
+        &--mobile {
+            @media screen and (max-width: 660px) {
+                display: flex;
+            }
+        }
+    }
+
+    &__item {
+        margin-right: 7px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__link {
+        display: block;
+        padding: 0 3px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 21px;
+        color: $Black;
+        position: relative;
+        transition: 0.3s ease all 0s;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + 'px') {
+            font-size: calc(14px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(21 / 16);
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 3px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: $GreenM;
+            transform: translate(0, 9px) scale(0);
+            transition: 0.3s ease all 0s;
+        }
+
+        &.active {
+            color: $GreenM;
+
+            &::after {
+                transform: translate(0, 9px) scale(1);
+            }
+        }
+
+        i {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &--fixed {
+        position: fixed;
+        @include adaptiv-value("right", 36, 15, 1);
+        @include adaptiv-value("bottom", 36, 15, 1);
+        z-index: 1;
+
+        @media screen and (max-width: 660px) {
+            bottom: 70px;
+        }
+
+        .pagination__list {
+            box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    }
+}

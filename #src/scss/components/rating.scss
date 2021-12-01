@@ -1,0 +1,10 @@
+.rating {
+	display: flex;
+
+	&__item {
+		@include adaptiv-value("margin-right", 14, 7, 1);
+		&::last-child {
+			margin-right: 0;
+		}
+	}
+}

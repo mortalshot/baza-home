@@ -1,0 +1,84 @@
+.steps {
+	@include adaptiv-value("padding-bottom", 137, 66, 1);
+	overflow: hidden;
+
+	&__title {
+		@include adaptiv-value("margin-bottom", 110, 50, 1);
+	}
+
+	&__items {
+		display: flex;
+		flex-wrap: wrap;
+	}
+}
+
+.step-item {
+	flex: 0 0 100%;
+	display: flex;
+
+	@media screen and (max-width: 1200px) {
+		margin-bottom: 25px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	@media screen and (max-width: 450px) {
+		margin-bottom: 30px;
+	}
+
+	&__wrapper {
+		max-width: 494px;
+		display: flex;
+
+		@media screen and (min-width: $layoutDesktop + "px") {
+			max-width: 44%;
+		}
+		@media screen and (max-width: 767px) {
+			max-width: 100%;
+		}
+		@media screen and (max-width: 450px) {
+			display: block;
+		}
+	}
+
+	&__image {
+		flex: 0 0 120px;
+		@include adaptiv-value("margin-right", 45, 15, 0);
+
+		@media screen and (max-width: 767px) {
+			flex: 0 0 20%;
+		}
+		@media screen and (max-width: 450px) {
+			max-width: 120px;
+			margin: 0 auto 25px;
+		}
+	}
+
+	&__title {
+		@include adaptiv-value("margin-bottom", 35, 31, 1);
+		max-width: 300px;
+		display: flex;
+
+		@media screen and (min-width: $layoutDesktop + "px") {
+			max-width: 83%;
+		}
+		@media screen and (max-width: 767px) {
+			max-width: 100%;
+		}
+	}
+
+	&--flex-end {
+		justify-content: flex-end;
+
+		.step-item__image {
+			@include adaptiv-value("margin-right", 35, 15, 0);
+
+			@media screen and (max-width: 450px) {
+				max-width: 120px;
+				margin: 0 auto 25px;
+			}
+		}
+	}
+}
+// !steps end

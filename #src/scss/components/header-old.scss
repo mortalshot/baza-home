@@ -1,0 +1,756 @@
+.header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 50;
+	transition: 0.3s ease box-shadow 0s;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: #fff;
+		z-index: 2;
+	}
+
+	.navbar {
+		z-index: 2;
+		padding: 0;
+		height: $size-header-height;
+
+		@media screen and (max-width: 767px) {
+			height: $size-header-height-mobile;
+		}
+
+		.nav-link {
+			padding: 5px;
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 156%;
+			color: $Black;
+			white-space: nowrap;
+			transition: 0.3s ease all 0s;
+			position: relative;
+
+			@media screen and (min-width: 992px) {
+				&:hover {
+					color: rgba($color: $Black, $alpha: 0.75);
+				}
+			}
+			@media screen and (max-width: 1080px) {
+				font-size: 14px;
+			}
+
+			&::before {
+				content: "";
+				display: block;
+				width: 100%;
+				height: 2px;
+				background-color: $GreenM;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				transform: translate(0, 22px) scale(0);
+				transition: 0.3s ease all 0s;
+
+				@media screen and (max-width: 1100px) {
+					transform: translate(0, 23px) scale(0);
+				}
+			}
+
+			&.active {
+				&::before {
+					transform: translate(0, 22px) scale(1);
+
+					@media screen and (max-width: 1100px) {
+						transform: translate(0, 23px) scale(1);
+					}
+				}
+			}
+		}
+	}
+
+	.navbar-brand {
+		display: flex;
+		align-items: center;
+
+		@media screen and (max-width: 660px) {
+			padding: 0;
+		}
+
+		&__link {
+			font-weight: 700;
+			font-size: 30px;
+			line-height: 1;
+			color: $GreenM;
+			transition: 0.3s ease all 0s;
+
+			@media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+				font-size: calc(16px + 14 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+			}
+			@media screen and (min-width: 992px) {
+				&:hover {
+					color: rgba($color: $GreenM, $alpha: 0.75);
+				}
+			}
+			@media screen and (max-width: 660px) {
+				color: $White;
+				font-size: 16px;
+				padding: 9px 5px;
+			}
+		}
+
+		&__text {
+			font-weight: 400;
+			color: $DGray;
+			font-size: 14px;
+			line-height: 17px;
+
+			@media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+				font-size: calc(12px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+				line-height: calc(17 / 14);
+			}
+		}
+	}
+
+	&__menu {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	&__burger {
+		@media screen and (max-width: 767px) {
+			display: block;
+			position: relative;
+			width: 15px;
+			height: 12px;
+			transition: 0.3s ease all 0s;
+			padding: 7px 10px;
+			z-index: 2;
+
+			&::before,
+			&::after,
+			span {
+				content: "";
+				background-color: $Black;
+				position: absolute;
+				width: 100%;
+				height: 2px;
+				left: 0;
+				transition: 0.3s ease all 0s;
+			}
+
+			&::before {
+				top: 0;
+			}
+
+			&::after {
+				bottom: 0;
+			}
+
+			span {
+				top: 6px;
+			}
+
+			&.active {
+				&::before {
+					transform: rotate(45deg);
+					top: 6px;
+				}
+
+				&::after {
+					transform: rotate(-45deg);
+					bottom: 6px;
+				}
+
+				span {
+					transform: scale(0);
+				}
+			}
+		}
+	}
+
+	&__home {
+		.navbar {
+			.navbar-collapse {
+				height: 100%;
+			}
+
+			.nav-item {
+				@include adaptiv-value("margin-right", 29, 5, 1);
+
+				@media screen and (max-width: 800px) {
+					margin-right: 10px;
+				}
+				@media screen and (max-width: 767px) {
+					margin: 0px 0px 10px 0px;
+				}
+			}
+
+			.nav-link {
+				padding: 5px;
+				font-weight: 500;
+				font-size: 16px;
+				line-height: 156%;
+				color: $Black;
+				white-space: nowrap;
+				transition: 0.3s ease all 0s;
+				position: relative;
+
+				@media screen and (min-width: 992px) {
+					&:hover {
+						color: rgba($color: $Black, $alpha: 0.75);
+					}
+				}
+				@media screen and (max-width: 1080px) {
+					font-size: 14px;
+				}
+				@media screen and (max-width: 800px) {
+					font-size: 13px;
+				}
+				@media screen and (max-width: 767px) {
+					font-size: 20px;
+					line-height: 140%;
+					display: inline-block;
+					padding: 5px 0;
+				}
+
+				&::before {
+					content: "";
+					display: block;
+					width: 100%;
+					height: 2px;
+					background-color: $GreenM;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					transform: translate(0, 22px) scale(0);
+					transition: 0.3s ease all 0s;
+
+					@media screen and (max-width: 1100px) {
+						transform: translate(0, 23px) scale(0);
+					}
+					@media screen and (max-width: 800px) {
+						transform: translate(0, 24px) scale(0);
+					}
+					@media screen and (max-width: 767px) {
+						transform: translate(0, 0) scale(0);
+					}
+				}
+
+				&.active {
+					&::before {
+						transform: translate(0, 22px) scale(1);
+
+						@media screen and (max-width: 1100px) {
+							transform: translate(0, 23px) scale(1);
+						}
+						@media screen and (max-width: 800px) {
+							transform: translate(0, 24px) scale(1);
+						}
+						@media screen and (max-width: 767px) {
+							transform: translate(0, 0) scale(1);
+						}
+					}
+				}
+			}
+		}
+
+		.navbar-brand {
+			.navbar-brand__link {
+				@include adaptiv-value("margin-right", 30, 15, 1);
+
+				@media screen and (max-width: 660px) {
+					color: $GreenM;
+				}
+			}
+		}
+
+		.header__menu {
+			@media screen and (max-width: 767px) {
+				position: fixed;
+				top: -100%;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				overflow: auto;
+				background-color: $White;
+				padding: #{$size-header-height-mobile} 20px 25px;
+				z-index: 1;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: baseline;
+				transition: 0.3s ease all 0s;
+
+				&.active {
+					top: 0;
+				}
+			}
+		}
+
+		.navbar-nav {
+			@media screen and (max-width: 767px) {
+				margin-bottom: 40px;
+			}
+		}
+	}
+
+	&__inner {
+		.container-fluid {
+			padding-right: 0 !important;
+
+			@media screen and (min-width: 992px) {
+				padding: 0 35px;
+			}
+			@media screen and (max-width: 660px) {
+				padding: 0;
+			}
+		}
+
+		.navbar {
+			justify-content: stretch;
+
+			@media screen and (max-width: 660px) {
+				height: $size-inner-header-height-mobile;
+				align-items: baseline;
+			}
+
+			&__row {
+				display: flex;
+				height: 100%;
+				width: 100%;
+
+				@media screen and (max-width: 660px) {
+					padding: 0 20px;
+					height: auto;
+				}
+			}
+
+			.nav-item {
+				@include adaptiv-value("margin-right", 32, 0, 1);
+				position: relative;
+
+				@media screen and (max-width: 660px) {
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+
+				&--notification {
+					.nav-link {
+						&::after {
+							content: "";
+							display: block;
+							width: 6px;
+							height: 6px;
+							background-color: $Red;
+							border-radius: 50%;
+							position: absolute;
+							right: 0;
+							top: 7px;
+
+							@media screen and (max-width: 450px) {
+								top: 4px;
+							}
+						}
+					}
+				}
+			}
+
+			.nav-link {
+				@media screen and (max-width: 450px) {
+					font-weight: 700;
+					font-size: 12px;
+					text-transform: uppercase;
+				}
+
+				&::before {
+					height: 4px;
+				}
+
+				&.active {
+					@media screen and (max-width: 767px) {
+						&::before {
+							transform: translate(0, 11px) scale(1);
+						}
+					}
+					@media screen and (max-width: 660px) {
+						&::before {
+							transform: translate(0, 12px) scale(1);
+						}
+					}
+					@media screen and (max-width: 450px) {
+						&::before {
+							transform: translate(0, 14px) scale(1);
+						}
+					}
+				}
+			}
+		}
+
+		.navbar-brand {
+			@include adaptiv-value("margin-right", 66, 0, 1);
+		}
+
+		.header__menu {
+			align-items: center;
+			justify-content: stretch;
+			flex: 1 1 auto;
+		}
+
+		.navbar-nav {
+			flex: 1 1 auto;
+		}
+	}
+
+	.navigation-drawer__account {
+		display: flex;
+		align-items: center;
+	}
+
+	.account__avatar {
+		display: flex;
+
+		@media screen and (max-width: 450px) {
+			margin-right: 18px;
+			width: 22px;
+			height: 22px;
+			flex: 0 0 22px;
+		}
+	}
+
+	&__provider {
+		.header__container {
+			padding: 0 20px !important;
+			
+			@media screen and (min-width: 992px) {
+				padding: 0 35px !important;
+			}
+			@media screen and (max-width: 660px) {
+				padding: 0 !important;
+			}
+		}
+		.header__controls .controls__item:last-child {
+			margin-right: 0;
+		}
+
+		.header__menu .navbar-nav {
+			@media screen and (max-width: 450px) {
+				justify-content: space-between;
+			}
+		}
+
+		.account__avatar {
+			margin: 0;
+
+			@media screen and (max-width: 450px) {
+				margin: 0 0 0 10px;
+			}
+		}
+	}
+
+	&.active {
+		box-shadow: 0 4px 30px rgba($Black, 0.1);
+	}
+
+	&--logged {
+		.header__home .navbar .nav-item {
+			@media screen and (min-width: 768px) {
+				@include adaptiv-value("margin-right", 29, -20, 1);
+			}
+		}
+		.phone {
+			@media screen and (min-width: 768px) {
+				border-right: 1px solid $LGray3;
+				@include adaptiv-value("margin-right", 33, -5, 1);
+				@include adaptiv-value("padding-right", 30, -5, 1);
+				@include adaptiv-value("padding-left", 30, -5, 1);
+			}
+		}
+
+		.account__avatar {
+			@media screen and (min-width: 768px) {
+				@include adaptiv-value("margin-right", 16, 5, 1);
+			}
+			@media screen and (max-width: 450px) {
+				width: 34px;
+				height: 34px;
+				flex: 0 0 34px;
+			}
+		}
+
+		.account__name {
+			color: $Black;
+		}
+
+		.account__role {
+			color: rgba($color: $Black, $alpha: 0.6);
+		}
+
+		.account__login {
+			@include adaptiv-value("width", 38, 20, 1);
+			@include adaptiv-value("height", 38, 20, 1);
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 3px;
+			background-color: $GreenM;
+			color: $White;
+			font-size: 14px;
+			@include adaptiv-value("margin-left", 20, 0, 1);
+
+			@media screen and (max-width: 767px) {
+				width: 38px;
+				height: 38px;
+				margin-left: 20px;
+				flex: 0 0 38px;
+			}
+		}
+	}
+}
+
+.controls {
+	display: flex;
+	margin: 0;
+
+	@media screen and (max-width: 660px) {
+		flex: 0 0 100%;
+		background-color: $GreenM;
+		justify-content: space-between;
+		padding: 0 30px;
+	}
+
+	&__item {
+		position: relative;
+		@include adaptiv-value("margin-right", 36, 0, 1);
+
+		@media screen and (max-width: 660px) {
+			margin: 0;
+		}
+
+		&.active {
+			.controls__link {
+				color: rgba($color: $Gray2, $alpha: 0.3);
+
+				@media screen and (max-width: 660px) {
+					color: rgba($color: $White, $alpha: 0.8);
+				}
+			}
+		}
+
+		.controls {
+			&__sub-menu {
+				position: absolute;
+				bottom: -40px;
+				right: 0;
+				z-index: 1;
+				transform: translate(0, -100%);
+				background: $White;
+				box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.1);
+				@include adaptiv-value("padding", 30, 15, 1);
+				width: 252px;
+				opacity: 0;
+				visibility: hidden;
+				pointer-events: none;
+				transition: 0.5s ease all 0s;
+
+				@media screen and (max-width: 660px) {
+					bottom: -10px;
+				}
+
+				&.active {
+					opacity: 1;
+					visibility: visible;
+					pointer-events: auto;
+					transform: translate(0, 100%);
+				}
+			}
+
+			&__menu-item {
+				font-weight: 500;
+				margin-bottom: 14px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				a {
+					color: $Black;
+					transition: 0.3s ease all 0s;
+				}
+			}
+		}
+	}
+
+	&__link {
+		display: flex;
+		font-size: 20px;
+		color: $Gray;
+		transition: 0.3s ease all 0s;
+		padding: 9px 5px;
+
+		@media screen and (min-width: 992px) {
+			&:hover {
+				color: rgba($color: $Gray2, $alpha: 0.3);
+			}
+		}
+		@media screen and (max-width: 660px) {
+			color: $White;
+		}
+
+		i {
+			display: inline-flex;
+			font-size: 18px;
+		}
+	}
+}
+
+.header-cart {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	padding: 0 25px;
+	border-left: 1px solid $LGray3;
+
+	@media screen and (max-width: 991px) {
+		padding: 0 20px;
+	}
+	@media screen and (max-width: 660px) {
+		height: auto;
+		border: 0;
+		padding: 0;
+	}
+
+	&__link {
+		display: flex;
+		font-size: 26px;
+		color: $GreenM;
+		transition: 0.3s ease all 0s;
+	}
+
+	&--notification {
+		.header-cart__link {
+			position: relative;
+
+			&::after {
+				content: "";
+				display: block;
+				width: 6px;
+				height: 6px;
+				background-color: $Red;
+				border-radius: 50%;
+				position: absolute;
+				right: 0;
+				top: 0;
+
+				@media screen and (max-width: 450px) {
+					top: 0px;
+				}
+			}
+		}
+	}
+
+	&.active {
+		position: relative;
+
+		&::after {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 4px;
+			background-color: $GreenM;
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translate(-50%, 0);
+
+			@media screen and (max-width: 660px) {
+				transform: translate(-50%, 10px);
+			}
+			@media screen and (max-width: 450px) {
+				transform: translate(-50%, 13px);
+			}
+		}
+	}
+}
+
+.phone {
+	display: flex;
+	align-items: center;
+	border-left: 1px solid $LGray3;
+	@include adaptiv-value("padding-left", 36, 15, 0);
+	@include adaptiv-value("padding-right", 36, 15, 0);
+
+	@media screen and (min-width: 768px) {
+		height: 100%;
+	}
+	@media screen and (max-width: 850px) {
+		padding: 0 15px;
+	}
+	@media screen and (max-width: 767px) {
+		padding: 0 0 20px;
+		border: 0;
+	}
+
+	&__label {
+		@include adaptiv-value("padding-right", 15, 5, 0);
+		font-weight: 500;
+		font-size: calc(12px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+		line-height: calc(18 / 14);
+		white-space: nowrap;
+		color: $Black;
+
+		@media screen and (max-width: 1050px) {
+			display: none;
+		}
+		@media screen and (max-width: 767px) {
+			display: block;
+			font-size: 20px;
+			line-height: 140%;
+		}
+	}
+
+	&__link {
+		padding: 5px;
+
+		@media screen and (min-width: 992px) {
+			&:hover {
+				i {
+					color: rgba($color: $DGray, $alpha: 0.75);
+				}
+			}
+		}
+	}
+
+	i {
+		display: flex;
+		font-size: calc(14px + 6 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+		color: $DGray;
+
+		@media screen and (max-width: 575px) {
+			font-size: 20px;
+		}
+
+		&::before {
+			transition: 0.3s ease all 0s;
+		}
+	}
+}
+
+.site__wrap--auth {
+	.header {
+		&::before {
+			background: transparent;
+		}
+	}
+	.navbar-brand__text,
+	.header__burger,
+	.header__menu {
+		display: none !important;
+	}
+}

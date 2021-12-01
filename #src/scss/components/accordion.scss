@@ -1,0 +1,44 @@
+.accordion {
+    // .accordion__title
+    &__title {
+        position: relative;
+        cursor: pointer;
+        margin: 0;
+
+        &::before,
+        &::after {
+            content: "";
+            width: 9px;
+            height: 1px;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            transition: 0.3s ease all 0s;
+        }
+
+        &::before {
+            transform: translate(0, -50%) rotate(-45deg);
+            right: 0;
+        }
+
+        &::after {
+            transform: translate(0, -50%) rotate(45deg);
+            right: 6px;
+        }
+
+        &.active {
+            &::before {
+                transform: translate(0, -50%) rotate(45deg);
+            }
+            &::after {
+                transform: translate(0, -50%) rotate(-45deg);
+            }
+        }
+    }
+
+    // .accordion__text
+    &__text {
+        display: none;
+    }
+}

@@ -1,0 +1,49 @@
+@@include('../html-components/_header-old.html', {
+"title": "Login",
+"draverClass": "drawer-off site__wrap--auth",
+})
+
+<main class="site__main">
+    <section class="auth firstscreen base">
+        <div class="base__container container">
+            <div class="base__content">
+                <div class="firstscreen__row">
+                    <div class="firstscreen__content">
+                        <form action="" class="auth__form">
+                            <div class="auth__heading">
+                                <h1 class="auth__title title-h1">Вход</h1>
+                                <div class="auth__subtitle">Нет аккаунта? <a href="sign-up.html" class="text-link">Зарегистрироваться</a></div>
+                            </div>
+                            <div class="auth__body">
+                                <div class="form-group form-group--invalid">
+                                    <input type="email" class="form-control" id="authEmail" placeholder="Почта" required>
+                                    <div class="form-error">Логин введён не верно</div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" id="authPassword" placeholder="Пароль" required>
+                                    <div class="form-error">Пароль введён не верно</div>
+                                </div>
+                                <div class="auth__save">
+                                    <div class="checkbox">
+                                        <input id="authSavePassword" type="checkbox" name="pasword" class="checkbox__input">
+                                        <label for="authSavePassword" class="checkbox__label"><span>Запомнить пароль</span></label>
+                                    </div>
+                                    <a href="" class="auth__link">Забыли пароль?</a>
+                                </div>
+                                
+                                <button type="submit" class="auth__btn btn btn-green">Войти</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="auth__image">
+                        <img src="../img/home/animation/animation.png" alt="" width="1070" height="790">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+@@include('../html-components/_footer.html', {
+"footerClass": "footer--auth"
+})

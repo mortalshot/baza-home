@@ -1,0 +1,184 @@
+.auth {
+    background-color: $LGray4;
+    margin: 0 !important;
+    height: 100%;
+
+    .firstscreen__content {
+        @include adaptiv-value("padding-top", 25, 0, 1);
+
+        @media screen and (max-width: 767px) {
+            flex: 0 0 100%;
+        }
+        @media screen and (max-width: 575px) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__form {
+        max-width: 262px;
+        margin: 0 auto;
+    }
+
+    &__heading {
+        @include adaptiv-value("margin-bottom", 40, 25, 1);
+    }
+
+    &__title {
+        margin-bottom: 4px;
+    }
+
+    &__subtitle {
+        font-size: 16px;
+        line-height: 21px;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(14px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(21 / 16);
+        }
+
+        a {
+            display: inline-block;
+            color: $GreenM;
+            
+            &::before {
+                border-bottom: 1px solid $GreenM;
+            }
+
+            @media screen and (min-width: 992px) {
+                &:hover {
+                    color: $GreenM; 
+                }
+            }
+        }
+    }
+
+    &__link {
+        font-size: 12px;
+        line-height: 15px;
+        color: $Gray;
+        transition: 0.3s ease opacity 0s;
+
+        @media screen and (min-width: 992px) {
+            &:hover {
+                color: $Gray;
+                opacity: 0.6;
+            }
+        }
+    }
+
+    &__save {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include adaptiv-value("margin-top", 22, 16, 1);
+        @include adaptiv-value("margin-bottom", 25, 29, 1);
+    }
+
+    &__btn {
+        width: 100%;
+        height: 49px;
+    }
+
+    &__policy {
+        font-size: 12px;
+        line-height: 15px;
+        color: $Gray;
+        @include adaptiv-value("margin-top", 36, 24, 1);
+
+        a {
+            color: $GreenM;
+            transition: 0.3s ease opacity 0s;
+
+            @media screen and (min-width: 992px) {
+                &:hover {
+                    color: $GreenM;
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+
+    .form {
+        &-group {
+            @include adaptiv-value("margin-bottom", 24, 20, 1);
+
+            &--invalid {
+                .form-control {
+                    border-color: $Red;
+                }
+
+                .form-error {
+                    display: block;
+                }
+            }
+
+            &--valid {
+                .form-control {
+                    border-color: $GreenM;
+                }
+            }
+        }
+
+        &-control {
+            height: 41px;
+            border-color: $White;
+            font-size: 16px;
+            line-height: 21px;
+            color: $Black;
+
+            &::placeholder {
+                color: $Gray;
+                transition: 0.3s ease opacity 0s;
+            }
+
+            &:focus {
+                box-shadow: none;
+
+                &::placeholder {
+                    opacity: 0;
+                }
+            }
+        }
+
+        &-error {
+            font-size: 10px;
+            line-height: 1;
+            color: $Red;
+            margin: 5px 0;
+            display: none;
+        }
+    }
+
+    .checkbox {
+        display: flex;
+
+        &__input {
+            &:checked + .checkbox__label::before {
+                background-color: $White;
+                border-color: $GreenM;
+            }
+        }
+
+        &__label {
+            font-size: 12px;
+            line-height: 15px;
+
+            &::before {
+                background-color: $White;
+                border: 1px solid $White;
+            }
+            &::after {
+                width: 8px;
+                height: 7px;
+                left: 3px;
+                background: url(../img/icons/check-green.svg) no-repeat center/cover;
+            }
+        }
+    }
+
+    &__image {
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
+    }
+}

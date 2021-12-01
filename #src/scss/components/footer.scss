@@ -1,0 +1,244 @@
+.footer {
+	background-color: $GreenM;
+	color: $White;
+	position: relative;
+	z-index: 2;
+
+	&__top {
+		background-color: $GreenM;
+		color: $White;
+		@include adaptiv-value("padding-top", 48, 32, 1);
+		padding-bottom: 32px;
+	}
+
+	&__title {
+		font-weight: 600;
+		font-size: 32px;
+		line-height: 42px;
+		max-width: 611px;
+
+		@media screen and (min-width: $layoutDesktop + "px") {
+			max-width: 80%;
+		}
+		@media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+			font-size: calc(22px + 10 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+			line-height: calc(42 / 32);
+		}
+		@media screen and (max-width: 767px) {
+			margin-bottom: 48px;
+		}
+	}
+
+	&__text {
+		@include adaptiv-font(24, 31, 22, 1);
+		max-width: 405px;
+
+		.text-link {
+			color: $White;
+
+			&::before {
+				border-color: $White;
+				transition: $transition ease border-color 0s;
+			}
+
+			@media screen and (min-width: 992px) {
+				&:hover {
+					opacity: 1;
+					color: $White;
+
+					&::before {
+						border-color: transparent;
+					}
+				}
+			}
+		}
+	}
+
+	&__bottom {
+		padding-bottom: 38px;
+		font-size: 16px;
+		line-height: 18px;
+	}
+
+	&__bottom-left {
+		padding-right: 15px;
+		display: flex;
+		font-size: 14px;
+		line-height: 18px;
+
+		@media screen and (max-width: 575px) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+
+	&__privacy {
+		@include adaptiv-value("padding-right", 40, 20, 1);
+
+		@media screen and (max-width: 575px) {
+			margin-bottom: 15px;
+		}
+	}
+
+	.popup-over__title {
+		color: $White;
+		position: relative;
+		transition: 0.3s ease all 0s;
+		white-space: nowrap;
+
+		&::before {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 1px;
+			border-bottom: 1px dashed $White;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			transform: translate(0, 100%);
+			transition: 0.3s ease all 0s;
+		}
+	}
+
+	.popup-over__body {
+		min-width: 280px;
+	}
+
+	.icon-kan {
+		font-size: 26px;
+	}
+
+	&--auth {
+		background-color: $LGray4;
+		color: $Gray;
+
+		.popup-over__title {
+			color: $Gray;
+
+			&::before {
+				border-color: $Gray;
+			}
+		}
+
+		.kan-logo {
+			display: none;
+		}
+	}
+}
+.footer-top {
+	&__container {
+	}
+
+	&__row {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		row-gap: 48px;
+		margin-left: -16px;
+		margin-right: -16px;
+	}
+
+	&__column {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+
+	&__left {
+	}
+
+	&__right {
+	}
+
+	&__contacts {
+	}
+}
+
+.contacts {
+	&__item {
+		@include adaptiv-font(16, 21, 14, 1);
+		display: flex;
+		align-items: center;
+
+		&:not(:last-child) {
+			margin-bottom: 16px;
+		}
+	}
+
+	&__item-inn {
+		text-transform: uppercase;
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 26px;
+	}
+
+	&__item-text {
+	}
+
+	a.contacts__item-text {
+		color: $White;
+		text-decoration: underline transparent from-font;
+		text-underline-offset: 3px;
+		transition: $transition ease text-decoration 0s;
+
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline $White from-font;
+			}
+		}
+	}
+
+	&__item-label {
+		&:not(:last-child) {
+			margin-right: 4px;
+		}
+	}
+}
+
+.info {
+	&__caption {
+		font-weight: 600;
+		color: $Black;
+		margin-bottom: 19px;
+	}
+
+	&__links {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__link {
+		display: inline-flex;
+		text-decoration: underline;
+		color: $Black;
+		@include adaptiv-value("margin-bottom", 17, 10, 0);
+		transition: 0.3s ease all 0s;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		@media screen and (min-width: 992px) {
+			&:hover {
+				text-decoration: underline;
+				color: rgba($color: $Black, $alpha: 0.75);
+			}
+		}
+		@media screen and (max-width: 767px) {
+			font-size: 14px;
+		}
+	}
+}
+
+.kan-logo {
+	i {
+		color: $White;
+		transition: 0.3s ease all 0s;
+
+		@media screen and (min-width: 992px) {
+			&:hover {
+				color: rgba($color: $White, $alpha: 0.75);
+			}
+		}
+	}
+}

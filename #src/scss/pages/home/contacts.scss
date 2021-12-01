@@ -1,0 +1,273 @@
+.contacts-main {
+    @include adaptiv-value("margin-bottom", 136, 80, 1);
+
+    &:first-child {
+        @include adaptiv-value("margin-top", 64, 40, 1);
+    }
+
+    &__container {
+    }
+
+    &__title {
+        &:not(:last-child) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__map {
+    }
+}
+
+.contacts-map {
+    position: relative;
+
+    @media screen and (min-width: 768px) {
+        min-height: 756px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        @include adaptiv-value("padding", 30, 20, 1);
+        padding-right: 56px;
+        box-shadow: 0px 94px 94px -60px rgba(0, 0, 0, 0.15);
+        border-radius: 3px;
+        overflow: hidden;
+    }
+    @media screen and (max-width: 767px) {
+        display: flex;
+        flex-direction: column;
+
+        & > * {
+            &:not(:last-child) {
+                margin-bottom: 40px;
+            }
+        }
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        width: 861px;
+        height: 861px;
+        background: radial-gradient(50% 50% at 50% 50%, #ffffff 0%, rgba(255, 255, 255, 0.74) 82.29%, rgba(255, 255, 255, 0) 100%);
+        border-radius: 100%;
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        left: 0;
+        transform: translate(-50%, 50%);
+        pointer-events: none;
+
+        @media screen and (max-width: 767px) {
+            // width: 1197px;
+            // height: 1197px;
+            // left: 50%;
+            // top: auto;
+            // bottom: 0;
+            // transform: translate(-50%, 0);
+            display: none;
+        }
+    }
+
+    &__frame {
+        width: 100%;
+        object-fit: cover;
+
+        @media screen and (min-width: 768px) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+        }
+        @media screen and (max-width: 767px) {
+            height: 350px;
+            order: 2;
+            box-shadow: 0px 24px 24px 9px rgba(0, 0, 0, 0.05);
+        }
+    }
+
+    #map {
+        @media screen and (min-width: 768px) {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+        @media screen and (max-width: 767px) {
+            height: 400px;
+            width: 100%;
+            position: relative;
+            order: 2;
+            box-shadow: 0px 24px 24px 9px rgba(0, 0, 0, 0.05);
+        }
+    }
+
+    &__address {
+        position: relative;
+        z-index: 2;
+        max-width: 370px;
+
+        @media screen and (min-width: 768px) {
+            padding: 20px;
+        }
+        @media screen and (max-width: 767px) {
+            order: 1;
+            max-width: 100%;
+        }
+    }
+
+    &__form {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 360px;
+        border-radius: 2px;
+        box-shadow: 10px 10px 64px rgba(0, 0, 0, 0.15);
+
+        @media screen and (max-width: 767px) {
+            order: 3;
+        }
+    }
+
+    .contacts {
+        &__item {
+            display: block;
+
+            &:not(:last-child) {
+                margin-bottom: 24px;
+            }
+        }
+
+        &__item-label {
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.72px;
+            text-transform: uppercase;
+            color: #818181;
+
+            &:not(:last-child) {
+                margin: 0px 0px 8px 0px;
+            }
+        }
+
+        &__item-text {
+            font-weight: 500;
+        }
+
+        a.contacts__item-text {
+            color: $Black;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    text-decoration: underline $Black from-font;
+                }
+            }
+        }
+    }
+}
+
+.contacts-form {
+    display: block;
+    background: $White;
+    @include adaptiv-value("padding", 40, 20, 1);
+
+    &__title {
+        font-weight: 600;
+        @include adaptiv-font(24, 31, 18, 1);
+
+        &::before {
+            content: "\e902";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: "icomoon" !important;
+            @include adaptiv-font(20, 20, 16, 1);
+            background: transparent;
+            width: auto;
+            height: auto;
+        }
+        &::after {
+            display: none;
+        }
+
+        &.active {
+            &::before {
+                transform: translateY(-50%) rotate(-180deg);
+            }
+        }
+    }
+
+    .form-row {
+        &:not(:first-child) {
+            margin-top: 24px;
+        }
+    }
+
+    .form-group {
+        margin-bottom: 0;
+
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+    }
+
+    .form-label {
+        font-size: 12px;
+        line-height: 15px;
+        color: #9f9f9f;
+        margin-bottom: 8px;
+    }
+
+    .form-control {
+        background: $White;
+        border-radius: 3px;
+        border: 1px solid $Black;
+        height: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        @include adaptiv-font(16, 21, 14, 1);
+        color: $Black;
+
+        &:focus {
+            border-color: $GreenM;
+        }
+        &::placeholder {
+            color: #9f9f9f;
+        }
+    }
+
+    .select {
+        &__title {
+            border-color: $Black;
+        }
+
+        &__options {
+            border-color: $Black;
+        }
+    }
+
+    &__privacy {
+        font-size: 12px;
+        line-height: 15px;
+        color: #919191;
+
+        a {
+            color: $GreenM;
+            text-decoration: underline $GreenM from-font;
+            text-underline-offset: 3px;
+            transition: $transition ease text-decoration 0s;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    text-decoration: underline transparent from-font;
+                }
+            }
+        }
+    }
+
+    &__btn {
+        width: 100%;
+        @include adaptiv-font(18, 23, 16, 1);
+        padding: 12px 20px;
+    }
+}

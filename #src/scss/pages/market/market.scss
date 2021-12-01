@@ -1,0 +1,9 @@
+.market {
+    &__title {
+        @include adaptiv-value("margin-bottom", 36, 24, 1);
+    }
+
+    &__search {
+        @include adaptiv-value("margin-bottom", 41, 23, 1);
+    }
+}

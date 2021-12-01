@@ -1,0 +1,454 @@
+.bargaining {
+    .accordion {
+        &__title {
+            &::before {
+                display: none;
+            }
+            &::after {
+                width: 19px;
+                height: 19px;
+                background: $White url(../img/icons/chevron-right-bargaining.svg) no-repeat center/cover;
+                top: 50%;
+                right: 16px;
+                transform: translate(0, -50%) rotate(0deg);
+
+                @media screen and (max-width: 767px) {
+                    right: 5px;
+                }
+            }
+
+            &.active {
+                &::after {
+                    transform: translate(0, -50%) rotate(90deg);
+                }
+            }
+        }
+    }
+
+    .delivery-card__seller-info {
+        .cart__person {
+            @media screen and (max-width: 575px) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .cart__right {
+        padding-right: 0;
+    }
+
+    .order-terms__condition {
+        @media screen and (max-width: 575px) {
+            padding: 0;
+        }
+    }
+
+    .product-item {
+        &__row {
+            border-bottom: 1px solid $LGray3;
+            padding: 0 33px 0 10px;
+
+            @media screen and (max-width: 900px) {
+                flex-wrap: wrap;
+                padding: 8px 33px 8px 6px;
+
+                &::after {
+                    top: 26px;
+                }
+            }
+            @media screen and (max-width: 450px) {
+                padding-right: 24px;
+            }
+        }
+
+        &__column {
+            border-bottom-color: transparent;
+            padding: 12px 10px;
+
+            @media screen and (max-width: 900px) {
+                padding: 8px 10px;
+            }
+        }
+
+        &__column--name {
+            flex: 1 1 auto;
+
+            @media screen and (min-width: 1250px) {
+                flex: 0 0 32%;
+            }
+            @media screen and (max-width: 900px) {
+                flex: 0 0 100%;
+            }
+        }
+
+        &__content {
+            @media screen and (max-width: 400px) {
+                flex-wrap: wrap;
+            }
+        }
+
+        &__product {
+            flex: initial;
+            padding-right: 10px;
+
+            @media screen and (max-width: 400px) {
+                flex: 0 0 100%;
+                padding: 0px 0px 16px 0px;
+            }
+        }
+
+        &__product-name {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 21px;
+
+            @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+                font-size: calc(14px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+                line-height: calc(21 / 16);
+            }
+        }
+
+        &__column--size {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 15px;
+            color: $DGray;
+            flex: 0 0 120px;
+            @include adaptiv-value("flex-basis", 120, 70, 1);
+
+            @media screen and (max-width: 900px) {
+                flex: 0 0 30%;
+            }
+            @media screen and (max-width: 450px) {
+                flex: 0 0 50%;
+            }
+        }
+
+        &__column--quantum {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 15px;
+            color: $DGray;
+            flex: 0 0 120px;
+            @include adaptiv-value("flex-basis", 120, 70, 1);
+
+            @media screen and (max-width: 900px) {
+                flex: 0 0 30%;
+            }
+            @media screen and (max-width: 450px) {
+                flex: 0 0 50%;
+            }
+        }
+
+        &__column--weight {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 18px;
+            justify-content: flex-end;
+            padding-right: 29px;
+            white-space: nowrap;
+            position: relative;
+
+            @media screen and (max-width: 900px) {
+                flex: 0 0 40%;
+                min-height: 47px;
+            }
+            @media screen and (max-width: 450px) {
+                flex: 0 0 100%;
+                justify-content: flex-start;
+            }
+
+            .messages__person-notification {
+                position: absolute;
+                top: 0;
+                right: 0;
+                transform: translate(100%, -50%);
+            }
+        }
+    }
+
+    .application-card {
+        padding-bottom: 0;
+        border-radius: 3px;
+
+        .table__row {
+            @media screen and (max-width: 900px) {
+                display: flex;
+                flex-wrap: wrap;
+                border-bottom: 1px solid $LGray3;
+                padding: 7px 6px;
+            }
+        }
+
+        .table__column {
+            @media screen and (min-width: 901px) {
+                &:first-child {
+                    padding-left: 16px;
+                }
+                &:last-child {
+                    padding-right: 20px;
+                }
+            }
+
+            @media screen and (max-width: 900px) {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                padding: 5px 10px !important;
+                border: 0;
+            }
+        }
+
+        &__column--rating {
+            font-weight: 600;
+            font-size: 12px;
+            max-width: 40px;
+            color: $Black;
+            white-space: nowrap;
+            width: 55px;
+
+            i {
+                display: inline-flex;
+                margin-right: 2px;
+                color: $Yellow;
+            }
+
+            @media screen and (max-width: 900px) {
+                flex: 0 0 15%;
+                max-width: initial;
+                flex-wrap: nowrap !important;
+            }
+        }
+
+        &__column--name {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 18px;
+            color: $Black;
+            width: 20%;
+
+            @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+                font-size: calc(12px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+                line-height: calc(18 / 14);
+            }
+            @media screen and (max-width: 900px) {
+                flex: 0 0 33.333%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            @media screen and (max-width: 450px) {
+                flex: 0 0 50%;
+            }
+        }
+
+        .bargaining__name {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 160px;
+        }
+
+        &__column--company {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 15px;
+            color: $DGray;
+            white-space: nowrap;
+            width: 10%;
+
+            @media screen and (max-width: 900px) {
+                flex: 0 0 33.333%;
+            }
+            @media screen and (max-width: 450px) {
+                flex: 0 0 50%;
+                justify-content: flex-end;
+            }
+        }
+
+        &__column--location {
+            color: $DGray;
+            white-space: nowrap;
+            width: 12%;
+
+            @media screen and (max-width: 900px) {
+                flex: 0 0 33.333%;
+                justify-content: flex-end;
+            }
+            @media screen and (max-width: 450px) {
+                justify-content: flex-start;
+                flex: 0 0 50%;
+            }
+
+            .product-item__location {
+                font-weight: 500;
+
+                i {
+                    display: inline-flex;
+                    margin-right: 6px;
+                }
+
+                span {
+                    margin: 0;
+                }
+            }
+        }
+
+        &__column--lot {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 15px;
+            color: $DGray;
+
+            @media screen and (max-width: 900px) {
+                flex: 0 0 33.333%;
+            }
+            @media screen and (max-width: 450px) {
+                justify-content: flex-end;
+                text-align: right;
+                flex: 0 0 50%;
+            }
+        }
+
+        &__column--label {
+            text-align: right;
+
+            @media screen and (max-width: 900px) {
+                flex: 0 0 33.333%;
+            }
+            @media screen and (max-width: 450px) {
+                flex: 0 0 53%;
+            }
+        }
+
+        &__column--price {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 21px;
+            color: $Black;
+            width: 7%;
+
+            @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+                font-size: calc(14px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+                line-height: calc(21 / 16);
+            }
+            @media screen and (max-width: 900px) {
+                flex: 0 0 33.333%;
+                justify-content: flex-end;
+            }
+            @media screen and (max-width: 450px) {
+                justify-content: flex-end;
+                flex: 0 0 47%;
+            }
+        }
+    }
+
+    &__accept {
+        @include adaptiv-value("padding", 20, 15, 1);
+        background-color: $Yellow;
+
+        @media screen and (min-width: 992px) {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__accept-label {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 21px;
+        padding-right: 15px;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(14px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(21 / 16);
+        }
+        @media screen and (max-width: 991px) {
+            padding: 0px 0px 20px 0px;
+        }
+    }
+
+    &__accept-tools {
+        display: flex;
+        align-items: center;
+
+        @media screen and (max-width: 991px) {
+            justify-content: flex-end;
+        }
+
+        a {
+            font-size: 14px;
+            line-height: 1;
+        }
+    }
+
+    &__accept-cancel {
+        @include adaptiv-value("margin-right", 25, 15, 1);
+        color: $DGray;
+        text-decoration: underline;
+        transition: 0.3s ease all 0s;
+    }
+
+    &__accept-save {
+        padding: 5px 10px;
+    }
+
+    &__bet {
+        @include adaptiv-value("padding", 20, 15, 1);
+        background-color: $LBlue;
+
+        @media screen and (min-width: 992px) {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .form {
+            &-group {
+                display: flex;
+                align-items: center;
+                margin: 0;
+                @include adaptiv-value("padding-right", 32, 15, 1);
+            }
+
+            &-control {
+                background-color: $White;
+                height: 30px;
+                max-width: 72px;
+                font-size: 14px;
+                line-height: 18px;
+            }
+
+            &-label {
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 1;
+                @include adaptiv-value("padding-left", 14, 8, 1);
+                white-space: nowrap;
+                margin: 0;
+            }
+        }
+    }
+
+    &__footer {
+        background-color: $GreenM;
+        @include adaptiv-value("padding-top", 33, 20, 1);
+        @include adaptiv-value("padding-bottom", 33, 20, 1);
+        @include adaptiv-value("padding-left", 28, 15, 1);
+        @include adaptiv-value("padding-right", 28, 15, 1);
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 23px;
+        color: $White;
+        border-radius: 0 0 3px 3px;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(14px + 4 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(23 / 18);
+        }
+    }
+}
+//! bargaining page end

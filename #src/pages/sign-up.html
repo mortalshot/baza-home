@@ -1,0 +1,46 @@
+@@include('../html-components/_header-old.html', {
+"title": "Login",
+"draverClass": "drawer-off site__wrap--auth",
+})
+
+<main class="site__main">
+    <section class="auth firstscreen base">
+        <div class="base__container container">
+            <div class="base__content">
+                <div class="firstscreen__row">
+                    <div class="firstscreen__content">
+                        <form action="" class="auth__form">
+                            <div class="auth__heading">
+                                <h1 class="auth__title title-h1">Регистрация </h1> 
+                                <div class="auth__subtitle">Уже есть аккаунт? <a href="login.html" class="text-link">Войти</a></div>
+                            </div>
+                            <div class="auth__body">
+                                <div class="form-group form-group--valid">
+                                    <input type="email" class="form-control" id="authEmail" placeholder="Почта" required>
+                                    <div class="form-error">Логин введён не верно</div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" id="authPassword" placeholder="Пароль" required>
+                                    <div class="form-error">Пароли не совпадают</div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" id="authPassword2" placeholder="Повторите пароль" required>
+                                    <div class="form-error">Пароли не совпадают</div>
+                                </div>
+                                <button type="submit" class="auth__btn btn btn-green">Зарегистрироваться</button>
+                                <div class="auth__policy">Нажимая на кнопку “Зарегистрироваться” вы соглашайтесь с <a href="">политикой конфиденциальности</a></div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="auth__image">
+                        <img src="../img/home/animation/animation.png" alt="" width="1070" height="790">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+@@include('../html-components/_footer.html', {
+"footerClass": "footer--auth"
+})

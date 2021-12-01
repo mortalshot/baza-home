@@ -1,0 +1,83 @@
+.filter-delivery {
+    &__accordion {
+        .accordion {
+            &__item {
+                border-bottom: 1px solid rgba($color: $Black, $alpha: 0.1);
+                padding: 15px 0;
+            }
+
+            &__title {
+                display: flex;
+                align-items: center;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 18px;
+
+                &::before,
+                &::after {
+                    height: 2px;
+                }
+
+                &::after {
+                    right: 5px;
+                }
+
+                span {
+                    margin-right: 9px;
+                }
+
+                .filter-modals__quantity {
+                    color: $GreenM;
+                }
+            }
+
+            &__text {
+                padding-left: 12px;
+                padding-top: 20px;
+            }
+        }
+    }
+
+    &__item {
+        margin-bottom: 8px;
+
+        .checkbox {
+            &__input {
+                &:checked {
+                    & + .checkbox__label {
+                        color: $GreenM;
+
+                        &::after {
+                            opacity: 1;
+                            transform: translate(0);
+                        }
+                    }
+                }
+            }
+            &__label {
+                display: flex;
+                align-items: center;
+                font-size: 14px;
+                line-height: 18px;
+                padding-left: 0;
+                transition: 0.3s ease all 0s;
+
+                &::before {
+                    display: none;
+                }
+                &::after {
+                    display: block;
+                    position: initial;
+                    left: initial;
+                    transform: translate(0);
+                    width: 9px;
+                    height: 10px;
+                    background: url(../img/icons/reset.svg) no-repeat center/cover;
+                    margin-left: 4px;
+                    opacity: 0;
+                    transition: 0.3s ease all 0s;
+                }
+            }
+        }
+    }
+}

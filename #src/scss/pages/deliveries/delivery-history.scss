@@ -1,0 +1,113 @@
+.delivery-history {
+    overflow-x: hidden;
+    background-color: $GreenM;
+    border-radius: 3px;
+    color: $White;
+    @include adaptiv-value("padding-top", 30, 24, 1);
+    @include adaptiv-value("padding-bottom", 30, 24, 1);
+    @include adaptiv-value("padding-left", 39, 24, 1);
+    @include adaptiv-value("padding-right", 39, 24, 1);
+
+    &__title {
+        @include adaptiv-value("margin-bottom", 60, 24, 1);
+        font-weight: 400;
+    }
+
+    &__timeline {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        @media screen and (max-width: 991px) {
+            padding: 0 !important;
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 4px;
+            background-color: rgba($color: $White, $alpha: 0.2);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+
+            @media screen and (max-width: 991px) {
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 4px;
+                height: 100%;
+            }
+        }
+
+        @media screen and (max-width: 991px) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__item {
+        max-width: 110px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        transform: translate(0, calc(-50% + 7px));
+
+        @media screen and (max-width: 991px) {
+            flex: 0 0 100%;
+            transform: translate(calc(-50% + 7px), 0);
+            flex-direction: row;
+            max-width: 100%;
+            margin: 0px 0px 28px 0px;
+            text-align: right;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            width: 14px;
+            flex: 0 0 14px;
+            height: 14px;
+            margin: 13px 0px 0px 2px;
+            background: url(../img/icons/check-delivery-history-timeline.svg) no-repeat center/cover;
+
+            @media screen and (max-width: 991px) {
+                margin: 0px 0px 0px 8px;
+            }
+        }
+    }
+
+    &__item-wrapper {
+        max-width: 110px;
+        font-size: 14px;
+        line-height: 18px;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(12px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(18 / 14);
+        }
+        @media screen and (max-width: 450px) {
+            max-width: 106px;
+        }
+    }
+
+    &__item--reverse {
+        flex-direction: column-reverse;
+        transform: translate(0, calc(50% - 7px));
+
+        @media screen and (max-width: 991px) {
+            transform: translate(calc(50% - 7px), 0);
+            flex-direction: row-reverse;
+            text-align: left;
+        }
+
+        &::after {
+            margin: 0 0 22px 0;
+
+            @media screen and (max-width: 991px) {
+                margin: 0px 8px 0px 0;
+            }
+        }
+    }
+}

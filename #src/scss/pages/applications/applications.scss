@@ -1,0 +1,316 @@
+.applications {
+    &__heading {
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &__title {
+        @include adaptiv-value("margin-right", 35, 15, 1);
+    }
+
+    &__add {
+        background-color: $GreenM;
+        border-radius: 3px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        @include adaptiv-value("padding", 13, 5, 1);
+        transition: 0.3s ease opacity 0s;
+
+        @media screen and (min-width: 992px) {
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+
+    .table {
+        &__column {
+            padding: 14px 10px;
+            border-top: 0;
+            vertical-align: middle;
+
+            @media screen and (min-width: 901px) {
+                border-bottom: 1px solid $LGray3;
+            }
+            @media screen and (max-width: 900px) {
+                padding: 3px 10px;
+                display: inline-flex;
+                align-items: center;
+            }
+        }
+    }
+
+    &__table {
+        background-color: $White;
+        border-radius: 3px;
+    }
+
+    &__row {
+        margin: 0;
+
+        @media screen and (max-width: 900px) {
+            display: flex;
+            flex-wrap: wrap;
+            border-bottom: 1px solid $LGray3;
+            padding: 16px 14px;
+        }
+
+        &:last-child {
+            border: 0;
+
+            .table__column {
+                border: 0;
+            }
+        }
+
+        .table__column {
+            @media screen and (min-width: 901px) {
+                &:first-child {
+                    padding-left: 20px;
+                }
+                &:last-child {
+                    padding-right: 20px;
+                }
+            }
+        }
+    }
+
+    &__column--request {
+        font-weight: 600;
+        min-width: 14%;
+
+        @media screen and (min-width: 901px) {
+            white-space: nowrap;
+            width: 17%;
+        }
+        @media screen and (max-width: 900px) {
+            order: 1;
+            flex: 0 0 30%;
+        }
+        @media screen and (max-width: 575px) {
+            flex: 0 0 50%;
+        }
+    }
+
+    &__request {
+        color: $Black;
+        position: relative;
+        white-space: nowrap;
+    }
+
+    &__request-notification {
+        position: absolute;
+        right: -5px;
+        top: 0;
+        border-radius: 1px;
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 1;
+        color: $White;
+        padding: 0.5px 2px;
+        background-color: $GreenM;
+        transform: translate(100%, -20%);
+    }
+
+    &__request-notification--viewed {
+        background-color: $LGray;
+    }
+
+    &__column--date {
+        font-size: 14px;
+        line-height: 18px;
+        min-width: 15%;
+
+        @media screen and (min-width: 901px) {
+            white-space: nowrap;
+            width: 17%;
+        }
+        @media screen and (max-width: 900px) {
+            order: 4;
+            flex: 0 0 80%;
+        }
+        @media screen and (max-width: 767px) {
+            flex: 0 0 50%;
+        }
+        @media screen and (max-width: 575px) {
+            order: 3;
+            flex: 0 0 80%;
+        }
+    }
+
+    &__column--city {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        color: $DGray;
+        width: 14%;
+
+        i {
+            color: $Gray;
+            margin-right: 6px;
+        }
+
+        @media screen and (min-width: $layoutDesktop + "px") {
+            font-size: calc(10px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(15 / 12);
+        }
+        @media screen and (min-width: 901px) {
+            white-space: nowrap;
+        }
+        @media screen and (max-width: 900px) {
+            order: 6;
+            flex: 0 0 100%;
+        }
+    }
+
+    &__city {
+        display: flex;
+        align-items: center;
+
+        i {
+            margin-right: 6px;
+            display: inline-flex;
+            color: $Gray;
+        }
+    }
+
+    &__column--products {
+        max-width: 40%;
+
+        @media screen and (max-width: 900px) {
+            order: 2;
+            flex: 0 0 50%;
+            max-width: 100%;
+            justify-content: flex-end;
+        }
+        @media screen and (max-width: 575px) {
+            flex: 0 0 100%;
+            order: 5;
+            justify-content: flex-start;
+        }
+    }
+
+    &__products {
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        margin: 0 -5px;
+    }
+
+    &__product {
+        padding: 5px;
+    }
+
+    &__product-img {
+        position: relative;
+        width: 20px;
+        padding-bottom: 20px;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__column--view {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        width: 5%;
+
+        i {
+            margin-right: 7px;
+        }
+
+        @media screen and (min-width: $layoutDesktop + "px") {
+            font-size: calc(10px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(15 / 12);
+        }
+        @media screen and (max-width: 900px) {
+            order: 5;
+            flex: 0 0 20%;
+            justify-content: flex-end;
+        }
+        @media screen and (max-width: 767px) {
+            order: 4;
+            flex: 0 0 50%;
+        }
+        @media screen and (max-width: 575px) {
+            flex: 0 0 20%;
+        }
+    }
+
+    &__view {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        color: $Gray;
+    }
+
+    &__column--status {
+        text-align: right;
+
+        @media screen and (min-width: 901px) {
+            width: 10%;
+        }
+        @media screen and (max-width: 900px) {
+            order: 3;
+            flex: 0 0 20%;
+            justify-content: flex-end;
+        }
+        @media screen and (max-width: 575px) {
+            order: 2;
+            flex: 0 0 50%;
+        }
+    }
+
+    &__status {
+        padding: 2px 5px;
+        border-radius: 2px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        color: $DGray;
+        display: inline-flex;
+    }
+
+    &__status--open {
+        background-color: $Yellow2;
+    }
+
+    &__status--closed,
+    &__status--expired,
+    &__status--incorrect {
+        background-color: $Pink;
+    }
+
+    &__status--agreement,
+    &__status--new {
+        background-color: $LBlue;
+    }
+
+    &__status--best {
+        background-color: $Yellow;
+        color: $DGray2;
+    }
+
+    &__status--confirmed,
+    &__status--collected,
+    &__status--shipped,
+    &__status--fixed,
+    &__status--paid-up {
+        background-color: $Green3;
+    }
+
+    &__status--waiting-car,
+    &__status--loading,
+    &__status--dispute,
+    &__status--expected,
+    &__status--acceptance {
+        background-color: $Orange;
+    }
+}

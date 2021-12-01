@@ -1,0 +1,80 @@
+.success {
+    margin: 0;
+    @include adaptiv-value("padding-top", 84, 50, 1);
+    height: calc(100vh - #{$size-header-height});
+    overflow: hidden;
+
+    @media screen and (max-width: 767px) {
+        height: calc(100vh - #{$size-header-height-mobile});
+    }
+    @media screen and (max-width: 660px) {
+        height: calc(100vh - #{$size-inner-header-height-mobile});
+    }
+    @media screen and (max-width: 575px) {
+        padding-top: 20px;
+        overflow-y: auto;
+    }
+
+    .firstscreen {
+        &__content {
+            @include adaptiv-value("padding-top", 100, 50, 1);
+
+            @media screen and (max-width: 575px) {
+                padding-top: 0;
+            }
+        }
+
+        &__image {
+            @media screen and (min-width: 576px) {
+                margin: 0;
+            }
+        }
+    }
+
+    &__wrapper {
+        max-width: 253px;
+        margin: 0 auto;
+    }
+
+    &__title {
+        font-weight: 400;
+        color: $Black;
+        @include adaptiv-value("margin-bottom", 40, 20, 1);
+
+        a {
+            font-weight: 600;
+            color: $GreenM;
+            transition: 0.3s ease opacity 0s;
+
+            @media screen and (min-width: 992px) {
+                &:hover {
+                    color: $GreenM;
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+
+    &__text {
+        font-size: 16px;
+        line-height: 21px;
+        color: $Black;
+        @include adaptiv-value("margin-bottom", 40, 20, 1);
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(14px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(21 / 16);
+        }
+    }
+
+    &__btn {
+        font-size: 18px;
+        line-height: 23px;
+
+        @media screen and (max-width: $layoutDesktop - 0.02 + "px") {
+            font-size: calc(16px + 2 * ((100vw - #{$layoutMobile}px) / (#{$layoutDesktop} - #{$layoutMobile})));
+            line-height: calc(23 / 18);
+        }
+    }
+}
+//! success page end
